@@ -10,6 +10,10 @@ import RxCocoa
 import RxSwift
 
 class BaseRepository {
-    var network: NetworkService = .shared
+    var network: NetworkServiceProviding
     var disposeBag = DisposeBag()
+    
+    init(network: NetworkServiceProviding = NetworkService.shared) {
+        self.network = network
+    }
 }

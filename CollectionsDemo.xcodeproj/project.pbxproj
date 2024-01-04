@@ -35,6 +35,10 @@
 		DB325BE82B4710C300E57953 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BE72B4710C300E57953 /* RxCocoa */; };
 		DB325BEB2B4712EF00E57953 /* CollectionViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BEA2B4712EF00E57953 /* CollectionViewModelMapper.swift */; };
 		DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BEE2B47141500E57953 /* CollectionViewModel.swift */; };
+		DB325BF12B472AE900E57953 /* NftRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */; };
+		DB325BF42B472CB900E57953 /* NetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */; };
+		DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */; };
+		DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		DB325BE42B47101000E57953 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		DB325BEA2B4712EF00E57953 /* CollectionViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapper.swift; sourceTree = "<group>"; };
 		DB325BEE2B47141500E57953 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepositoryTests.swift; sourceTree = "<group>"; };
+		DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceStub.swift; sourceTree = "<group>"; };
+		DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapperMock.swift; sourceTree = "<group>"; };
+		DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +164,9 @@
 		DB325B8F2B450C7B00E57953 /* CollectionsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DB325BF22B472C9900E57953 /* Helper */,
 				DB325B902B450C7B00E57953 /* CollectionsDemoTests.swift */,
+				DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */,
 			);
 			path = CollectionsDemoTests;
 			sourceTree = "<group>";
@@ -266,6 +276,16 @@
 				DB325BEE2B47141500E57953 /* CollectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DB325BF22B472C9900E57953 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */,
+				DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */,
+				DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,7 +455,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB325BF12B472AE900E57953 /* NftRepositoryTests.swift in Sources */,
+				DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */,
+				DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */,
 				DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */,
+				DB325BF42B472CB900E57953 /* NetworkServiceStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

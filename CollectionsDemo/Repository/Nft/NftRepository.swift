@@ -13,9 +13,13 @@ protocol NftRepositoryProtocol: AnyObject {
 }
 
 class NftRepository: BaseRepository {
-    private let viewModelMapper: CollectionViewModelMapper
-    init(viewModelMapper: CollectionViewModelMapper) {
+    private let viewModelMapper: CollectionViewModelMapping
+    init(
+        viewModelMapper: CollectionViewModelMapping,
+        network: NetworkServiceProviding = NetworkService.shared
+    ) {
         self.viewModelMapper = viewModelMapper
+        super.init(network: network)
     }
 }
 
