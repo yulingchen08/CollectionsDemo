@@ -10,7 +10,7 @@ import Moya
 import RxSwift
 import Foundation
 
-public class NetworkService: NetworkServiceProvider {
+public class NetworkService: NetworkServiceProviding {
     public static let shared = NetworkService()
     
     private let provider: NetworkProvider<MultiTarget>

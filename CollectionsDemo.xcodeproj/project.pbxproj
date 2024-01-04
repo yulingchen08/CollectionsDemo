@@ -16,7 +16,7 @@
 		DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B902B450C7B00E57953 /* CollectionsDemoTests.swift */; };
 		DB325B9B2B450C7C00E57953 /* CollectionsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B9A2B450C7C00E57953 /* CollectionsDemoUITests.swift */; };
 		DB325B9D2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B9C2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift */; };
-		DB325BAD2B455FA200E57953 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */; };
+		DB325BAD2B455FA200E57953 /* NetworkServiceProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BAC2B455FA200E57953 /* NetworkServiceProviding.swift */; };
 		DB325BB02B45605700E57953 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BAF2B45605700E57953 /* Moya */; };
 		DB325BB32B45610E00E57953 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BB22B45610E00E57953 /* RxSwift */; };
 		DB325BB52B45613700E57953 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BB42B45613700E57953 /* NetworkService.swift */; };
@@ -64,7 +64,7 @@
 		DB325B962B450C7C00E57953 /* CollectionsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB325B9A2B450C7C00E57953 /* CollectionsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDemoUITests.swift; sourceTree = "<group>"; };
 		DB325B9C2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
+		DB325BAC2B455FA200E57953 /* NetworkServiceProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProviding.swift; sourceTree = "<group>"; };
 		DB325BB42B45613700E57953 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DB325BB62B45615900E57953 /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
 		DB325BB82B45616F00E57953 /* NetworkPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPrinter.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		DB325BAB2B455F8700E57953 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */,
+				DB325BAC2B455FA200E57953 /* NetworkServiceProviding.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 			files = (
 				DB325BB52B45613700E57953 /* NetworkService.swift in Sources */,
 				DB325B7E2B450C7800E57953 /* ViewController.swift in Sources */,
-				DB325BAD2B455FA200E57953 /* NetworkServiceProvider.swift in Sources */,
+				DB325BAD2B455FA200E57953 /* NetworkServiceProviding.swift in Sources */,
 				DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */,
 				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
 				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
