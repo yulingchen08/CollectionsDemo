@@ -31,6 +31,10 @@
 		DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCA2B45B50600E57953 /* NftsApi.swift */; };
 		DB325BCE2B45B92200E57953 /* NftApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCD2B45B92200E57953 /* NftApiResponse.swift */; };
 		DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BD12B45BD5600E57953 /* NftRepository.swift */; };
+		DB325BE52B47101000E57953 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BE42B47101000E57953 /* BaseRepository.swift */; };
+		DB325BE82B4710C300E57953 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BE72B4710C300E57953 /* RxCocoa */; };
+		DB325BEB2B4712EF00E57953 /* CollectionViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BEA2B4712EF00E57953 /* CollectionViewModelMapper.swift */; };
+		DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BEE2B47141500E57953 /* CollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,9 @@
 		DB325BCA2B45B50600E57953 /* NftsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsApi.swift; sourceTree = "<group>"; };
 		DB325BCD2B45B92200E57953 /* NftApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftApiResponse.swift; sourceTree = "<group>"; };
 		DB325BD12B45BD5600E57953 /* NftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepository.swift; sourceTree = "<group>"; };
+		DB325BE42B47101000E57953 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		DB325BEA2B4712EF00E57953 /* CollectionViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapper.swift; sourceTree = "<group>"; };
+		DB325BEE2B47141500E57953 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			files = (
 				DB325BBE2B4561DE00E57953 /* SwiftyJSON in Frameworks */,
 				DB325BB32B45610E00E57953 /* RxSwift in Frameworks */,
+				DB325BE82B4710C300E57953 /* RxCocoa in Frameworks */,
 				DB325BB02B45605700E57953 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +121,7 @@
 				DB325B8F2B450C7B00E57953 /* CollectionsDemoTests */,
 				DB325B992B450C7C00E57953 /* CollectionsDemoUITests */,
 				DB325B772B450C7800E57953 /* Products */,
+				DB325BE62B4710C300E57953 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,7 +138,9 @@
 		DB325B782B450C7800E57953 /* CollectionsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DB325BCF2B45BD2F00E57953 /* Repositories */,
+				DB325BEC2B4713D700E57953 /* Collections */,
+				DB325BE92B4712BF00E57953 /* Mapper */,
+				DB325BCF2B45BD2F00E57953 /* Repository */,
 				DB325BA92B455F6600E57953 /* Network */,
 				DB325B792B450C7800E57953 /* AppDelegate.swift */,
 				DB325B7B2B450C7800E57953 /* SceneDelegate.swift */,
@@ -209,12 +220,13 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		DB325BCF2B45BD2F00E57953 /* Repositories */ = {
+		DB325BCF2B45BD2F00E57953 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				DB325BD02B45BD3D00E57953 /* Nft */,
+				DB325BE42B47101000E57953 /* BaseRepository.swift */,
 			);
-			path = Repositories;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		DB325BD02B45BD3D00E57953 /* Nft */ = {
@@ -223,6 +235,37 @@
 				DB325BD12B45BD5600E57953 /* NftRepository.swift */,
 			);
 			path = Nft;
+			sourceTree = "<group>";
+		};
+		DB325BE62B4710C300E57953 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB325BE92B4712BF00E57953 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BEA2B4712EF00E57953 /* CollectionViewModelMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		DB325BEC2B4713D700E57953 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BED2B4713F600E57953 /* ViewModel */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		DB325BED2B4713F600E57953 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BEE2B47141500E57953 /* CollectionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +288,7 @@
 				DB325BAF2B45605700E57953 /* Moya */,
 				DB325BB22B45610E00E57953 /* RxSwift */,
 				DB325BBD2B4561DE00E57953 /* SwiftyJSON */,
+				DB325BE72B4710C300E57953 /* RxCocoa */,
 			);
 			productName = CollectionsDemo;
 			productReference = DB325B762B450C7800E57953 /* CollectionsDemo.app */;
@@ -369,13 +413,16 @@
 				DB325BB52B45613700E57953 /* NetworkService.swift in Sources */,
 				DB325B7E2B450C7800E57953 /* ViewController.swift in Sources */,
 				DB325BAD2B455FA200E57953 /* NetworkServiceProviding.swift in Sources */,
+				DB325BEB2B4712EF00E57953 /* CollectionViewModelMapper.swift in Sources */,
 				DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */,
 				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
+				DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */,
 				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
 				DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */,
 				DB325BBB2B45618B00E57953 /* NetworkProvider.swift in Sources */,
 				DB325B7A2B450C7800E57953 /* AppDelegate.swift in Sources */,
 				DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */,
+				DB325BE52B47101000E57953 /* BaseRepository.swift in Sources */,
 				DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */,
 				DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */,
 				DB325BCE2B45B92200E57953 /* NftApiResponse.swift in Sources */,
@@ -764,6 +811,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB325BBC2B4561DE00E57953 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		DB325BE72B4710C300E57953 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
