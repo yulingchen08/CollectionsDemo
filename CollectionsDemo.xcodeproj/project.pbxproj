@@ -39,6 +39,7 @@
 		DB325BF42B472CB900E57953 /* NetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */; };
 		DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */; };
 		DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */; };
+		DB325BFC2B4742CA00E57953 /* CollectionViewModelMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceStub.swift; sourceTree = "<group>"; };
 		DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapperMock.swift; sourceTree = "<group>"; };
 		DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapperTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				DB325BF22B472C9900E57953 /* Helper */,
 				DB325B902B450C7B00E57953 /* CollectionsDemoTests.swift */,
 				DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */,
+				DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */,
 			);
 			path = CollectionsDemoTests;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */,
 				DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */,
 				DB325BF42B472CB900E57953 /* NetworkServiceStub.swift in Sources */,
+				DB325BFC2B4742CA00E57953 /* CollectionViewModelMapperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
