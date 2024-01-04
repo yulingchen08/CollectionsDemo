@@ -15,7 +15,7 @@ protocol ResponseTargetType: TargetType, EndpointPath {
 
 extension ResponseTargetType {
     var baseURL: URL {
-        URL(string: testnets)!
+        URL(string: alchemy)!
     }
 
     var headers: [String: String]? {

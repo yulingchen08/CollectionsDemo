@@ -29,7 +29,7 @@
 		DB325BC42B45A7C000E57953 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BC32B45A7C000E57953 /* BaseResponse.swift */; };
 		DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BC72B45A92E00E57953 /* NetworkError.swift */; };
 		DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCA2B45B50600E57953 /* NftsApi.swift */; };
-		DB325BCE2B45B92200E57953 /* CollectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCD2B45B92200E57953 /* CollectionDTO.swift */; };
+		DB325BCE2B45B92200E57953 /* NftApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCD2B45B92200E57953 /* NftApiResponse.swift */; };
 		DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BD12B45BD5600E57953 /* NftRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +74,7 @@
 		DB325BC32B45A7C000E57953 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		DB325BC72B45A92E00E57953 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DB325BCA2B45B50600E57953 /* NftsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsApi.swift; sourceTree = "<group>"; };
-		DB325BCD2B45B92200E57953 /* CollectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDTO.swift; sourceTree = "<group>"; };
+		DB325BCD2B45B92200E57953 /* NftApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftApiResponse.swift; sourceTree = "<group>"; };
 		DB325BD12B45BD5600E57953 /* NftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +162,7 @@
 		DB325BA92B455F6600E57953 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DB325BCC2B45B88B00E57953 /* DTO */,
+				DB325BCC2B45B88B00E57953 /* Response */,
 				DB325BAB2B455F8700E57953 /* Protocol */,
 				DB325BAA2B455F7200E57953 /* API */,
 				DB325BB42B45613700E57953 /* NetworkService.swift */,
@@ -201,12 +201,12 @@
 			path = NFT;
 			sourceTree = "<group>";
 		};
-		DB325BCC2B45B88B00E57953 /* DTO */ = {
+		DB325BCC2B45B88B00E57953 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				DB325BCD2B45B92200E57953 /* CollectionDTO.swift */,
+				DB325BCD2B45B92200E57953 /* NftApiResponse.swift */,
 			);
-			path = DTO;
+			path = Response;
 			sourceTree = "<group>";
 		};
 		DB325BCF2B45BD2F00E57953 /* Repositories */ = {
@@ -378,7 +378,7 @@
 				DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */,
 				DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */,
 				DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */,
-				DB325BCE2B45B92200E57953 /* CollectionDTO.swift in Sources */,
+				DB325BCE2B45B92200E57953 /* NftApiResponse.swift in Sources */,
 				DB325BC42B45A7C000E57953 /* BaseResponse.swift in Sources */,
 				DB325B7C2B450C7800E57953 /* SceneDelegate.swift in Sources */,
 			);

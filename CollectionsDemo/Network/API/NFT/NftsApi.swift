@@ -9,13 +9,13 @@ import Foundation
 import Moya
 
 struct NftsApi {
-    struct getNfts: ResponseTargetType {
-        typealias ResponseType = CollectionDTO.Collection
+    struct getNFTsForOwner: ResponseTargetType {
+        typealias ResponseType = NftApiResponse
         
-        private let limit: Int
+        private let pageSize: Int
         
         var path: String {
-            nfts()
+            getNFTsForOwner()
         }
         
         var method: Moya.Method {
@@ -23,15 +23,19 @@ struct NftsApi {
         }
         
         var task: Task {
-            let parameters: [String: Any] = ["limit": "\(limit)"]
+            let parameters: [String: Any] = [
+                "owner": ApiConstants.owner,
+                "withMetadata": "true",
+                "pageSize": pageSize
+            ]
             return .requestParameters(
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         }
         
-        init(limit: Int) {
-            self.limit = limit
+        init(pageSize: Int) {
+            self.pageSize = pageSize
         }
     }
 }
