@@ -16,6 +16,21 @@
 		DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B902B450C7B00E57953 /* CollectionsDemoTests.swift */; };
 		DB325B9B2B450C7C00E57953 /* CollectionsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B9A2B450C7C00E57953 /* CollectionsDemoUITests.swift */; };
 		DB325B9D2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B9C2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift */; };
+		DB325BAD2B455FA200E57953 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */; };
+		DB325BB02B45605700E57953 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BAF2B45605700E57953 /* Moya */; };
+		DB325BB32B45610E00E57953 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BB22B45610E00E57953 /* RxSwift */; };
+		DB325BB52B45613700E57953 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BB42B45613700E57953 /* NetworkService.swift */; };
+		DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BB62B45615900E57953 /* NetworkDecoder.swift */; };
+		DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BB82B45616F00E57953 /* NetworkPrinter.swift */; };
+		DB325BBB2B45618B00E57953 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BBA2B45618B00E57953 /* NetworkProvider.swift */; };
+		DB325BBE2B4561DE00E57953 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DB325BBD2B4561DE00E57953 /* SwiftyJSON */; };
+		DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BBF2B45A44300E57953 /* EndpointPath.swift */; };
+		DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BC12B45A56300E57953 /* BaseTargetType.swift */; };
+		DB325BC42B45A7C000E57953 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BC32B45A7C000E57953 /* BaseResponse.swift */; };
+		DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BC72B45A92E00E57953 /* NetworkError.swift */; };
+		DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCA2B45B50600E57953 /* NftsApi.swift */; };
+		DB325BCE2B45B92200E57953 /* CollectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BCD2B45B92200E57953 /* CollectionDTO.swift */; };
+		DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BD12B45BD5600E57953 /* NftRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,18 @@
 		DB325B962B450C7C00E57953 /* CollectionsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB325B9A2B450C7C00E57953 /* CollectionsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDemoUITests.swift; sourceTree = "<group>"; };
 		DB325B9C2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
+		DB325BB42B45613700E57953 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DB325BB62B45615900E57953 /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
+		DB325BB82B45616F00E57953 /* NetworkPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPrinter.swift; sourceTree = "<group>"; };
+		DB325BBA2B45618B00E57953 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		DB325BBF2B45A44300E57953 /* EndpointPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPath.swift; sourceTree = "<group>"; };
+		DB325BC12B45A56300E57953 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		DB325BC32B45A7C000E57953 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		DB325BC72B45A92E00E57953 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DB325BCA2B45B50600E57953 /* NftsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftsApi.swift; sourceTree = "<group>"; };
+		DB325BCD2B45B92200E57953 /* CollectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDTO.swift; sourceTree = "<group>"; };
+		DB325BD12B45BD5600E57953 /* NftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB325BBE2B4561DE00E57953 /* SwiftyJSON in Frameworks */,
+				DB325BB32B45610E00E57953 /* RxSwift in Frameworks */,
+				DB325BB02B45605700E57953 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +129,8 @@
 		DB325B782B450C7800E57953 /* CollectionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB325BCF2B45BD2F00E57953 /* Repositories */,
+				DB325BA92B455F6600E57953 /* Network */,
 				DB325B792B450C7800E57953 /* AppDelegate.swift */,
 				DB325B7B2B450C7800E57953 /* SceneDelegate.swift */,
 				DB325B7D2B450C7800E57953 /* ViewController.swift */,
@@ -127,6 +159,72 @@
 			path = CollectionsDemoUITests;
 			sourceTree = "<group>";
 		};
+		DB325BA92B455F6600E57953 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BCC2B45B88B00E57953 /* DTO */,
+				DB325BAB2B455F8700E57953 /* Protocol */,
+				DB325BAA2B455F7200E57953 /* API */,
+				DB325BB42B45613700E57953 /* NetworkService.swift */,
+				DB325BB62B45615900E57953 /* NetworkDecoder.swift */,
+				DB325BB82B45616F00E57953 /* NetworkPrinter.swift */,
+				DB325BBA2B45618B00E57953 /* NetworkProvider.swift */,
+				DB325BC72B45A92E00E57953 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DB325BAA2B455F7200E57953 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BC92B45B4C300E57953 /* NFT */,
+				DB325BBF2B45A44300E57953 /* EndpointPath.swift */,
+				DB325BC12B45A56300E57953 /* BaseTargetType.swift */,
+				DB325BC32B45A7C000E57953 /* BaseResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DB325BAB2B455F8700E57953 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BAC2B455FA200E57953 /* NetworkServiceProvider.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DB325BC92B45B4C300E57953 /* NFT */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BCA2B45B50600E57953 /* NftsApi.swift */,
+			);
+			path = NFT;
+			sourceTree = "<group>";
+		};
+		DB325BCC2B45B88B00E57953 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BCD2B45B92200E57953 /* CollectionDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		DB325BCF2B45BD2F00E57953 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BD02B45BD3D00E57953 /* Nft */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DB325BD02B45BD3D00E57953 /* Nft */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BD12B45BD5600E57953 /* NftRepository.swift */,
+			);
+			path = Nft;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +241,11 @@
 			dependencies = (
 			);
 			name = CollectionsDemo;
+			packageProductDependencies = (
+				DB325BAF2B45605700E57953 /* Moya */,
+				DB325BB22B45610E00E57953 /* RxSwift */,
+				DB325BBD2B4561DE00E57953 /* SwiftyJSON */,
+			);
 			productName = CollectionsDemo;
 			productReference = DB325B762B450C7800E57953 /* CollectionsDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +318,11 @@
 				Base,
 			);
 			mainGroup = DB325B6D2B450C7800E57953;
+			packageReferences = (
+				DB325BAE2B45605700E57953 /* XCRemoteSwiftPackageReference "Moya" */,
+				DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				DB325BBC2B4561DE00E57953 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = DB325B772B450C7800E57953 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,8 +366,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB325BB52B45613700E57953 /* NetworkService.swift in Sources */,
 				DB325B7E2B450C7800E57953 /* ViewController.swift in Sources */,
+				DB325BAD2B455FA200E57953 /* NetworkServiceProvider.swift in Sources */,
+				DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */,
+				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
+				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
+				DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */,
+				DB325BBB2B45618B00E57953 /* NetworkProvider.swift in Sources */,
 				DB325B7A2B450C7800E57953 /* AppDelegate.swift in Sources */,
+				DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */,
+				DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */,
+				DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */,
+				DB325BCE2B45B92200E57953 /* CollectionDTO.swift in Sources */,
+				DB325BC42B45A7C000E57953 /* BaseResponse.swift in Sources */,
 				DB325B7C2B450C7800E57953 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +721,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DB325BAE2B45605700E57953 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		DB325BBC2B4561DE00E57953 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DB325BAF2B45605700E57953 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325BAE2B45605700E57953 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		DB325BB22B45610E00E57953 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		DB325BBD2B4561DE00E57953 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325BBC2B4561DE00E57953 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB325B6E2B450C7800E57953 /* Project object */;
 }
