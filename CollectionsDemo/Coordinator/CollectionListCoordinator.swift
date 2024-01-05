@@ -13,7 +13,9 @@ class CollectionListCoordinator: Coordinator {
     
     init(navigation: BaseNavigationController? = nil) {
         self.navigation = navigation
-        self.rootViewController = CollectionListViewController(viewModel: CollectionListViewModel())
+        let repository = NftRepository(viewModelMapper: CollectionViewModelMapper())
+        let viewModel = CollectionListViewModel(nftRepository: repository)
+        self.rootViewController = CollectionListViewController(viewModel: viewModel)
     }
     
     func start() {
@@ -23,13 +25,6 @@ class CollectionListCoordinator: Coordinator {
             rootViewController,
             animated: false
         )
-    }
-}
-
-extension CollectionListCoordinator {
-    private func view() -> CollectionListViewController {
-        let viewModel = CollectionListViewModel()
-        return CollectionListViewController(viewModel: viewModel)
     }
 }
 

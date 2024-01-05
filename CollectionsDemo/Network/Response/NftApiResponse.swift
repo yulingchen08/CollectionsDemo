@@ -11,7 +11,7 @@ struct NftApiResponse: Codable {
     let ownedNfts: [OwnedNft]
     let totalCount: Int
     let validAt: ValidAt
-    let pageKey: String
+    let pageKey: String?
 }
 
 struct OwnedNft: Codable {
@@ -52,7 +52,7 @@ struct Image: Codable {
     let thumbnailUrl: String?
     let pngUrl: String?
     let contentType: String?
-    let size: Int
+    let size: Int?
     let originalUrl: String?
 }
 

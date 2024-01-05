@@ -27,23 +27,9 @@ class CollectionListViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(GalleryItemCell.self, forCellWithReuseIdentifier: Constants.cellId)
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    
-    // TODO: only for test, need to delete
-    private let galleries: [Gallery] = [
-        Gallery(contractName: "Nike Ape", name: "Ape", description: "An ape with Nike mark", imageUrl: ""),
-        Gallery(contractName: "Nike Ape2", name: "Ape2", description: "An ape with Nike mark2", imageUrl: ""),
-        Gallery(contractName: "Nike Ape3", name: "Ape3", description: "An ape with Nike mark3", imageUrl: ""),
-        Gallery(contractName: "Nike Ape4", name: "Ape4", description: "An ape with Nike mark4", imageUrl: ""), Gallery(contractName: "Nike Ape", name: "Ape", description: "An ape with Nike mark", imageUrl: ""),
-        Gallery(contractName: "Nike Ape2", name: "Ape2", description: "An ape with Nike mark2", imageUrl: ""),
-        Gallery(contractName: "Nike Ape3", name: "Ape3", description: "An ape with Nike mark3", imageUrl: ""),
-        Gallery(contractName: "Nike Ape4", name: "Ape4", description: "An ape with Nike mark4", imageUrl: ""),
-        Gallery(contractName: "Nike Ape", name: "Ape", description: "An ape with Nike mark", imageUrl: ""),
-        Gallery(contractName: "Nike Ape2", name: "Ape2", description: "An ape with Nike mark2", imageUrl: ""),
-        Gallery(contractName: "Nike Ape3", name: "Ape3", description: "An ape with Nike mark3", imageUrl: ""),
-        Gallery(contractName: "Nike Ape4", name: "Ape4", description: "An ape with Nike mark4", imageUrl: "")
-    ]
     
     private let viewModel: CollectionListViewModel
 
@@ -63,6 +49,8 @@ class CollectionListViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         setupNavigationBar()
+        bindViewModel()
+        viewModel.inputs.initializeDataFetch()
     }
 }
 
@@ -82,6 +70,15 @@ extension CollectionListViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "List"
     }
+    
+    private func bindViewModel() {
+        viewModel.outputs.presentCollectionCell = { [weak self] in
+            print("in presentPlaylistCell")
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension CollectionListViewController: UICollectionViewDataSource {
@@ -89,7 +86,7 @@ extension CollectionListViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return galleries.count
+        return viewModel.dataSource.galleries.count
     }
     
     func collectionView(
@@ -103,7 +100,7 @@ extension CollectionListViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let item = galleries[indexPath.item]
+        let item = viewModel.dataSource.galleries[indexPath.item]
         cell.configure(with: item)
         
         return cell
@@ -116,6 +113,12 @@ extension CollectionListViewController: UICollectionViewDelegate {
         didSelectItemAt indexPath: IndexPath
     ) {
         // TODO:
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row >= viewModel.dataSource.galleries.count - 1 {
+            viewModel.inputs.fetchMoreCollections()
+        }
     }
 }
 

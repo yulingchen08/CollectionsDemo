@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 import SnapKit
 
 class GalleryItemCell: UICollectionViewCell {
@@ -76,7 +77,9 @@ class GalleryItemCell: UICollectionViewCell {
 
     func configure(with item: Gallery) {
         borderView.layer.cornerRadius = Constants.borderCornerRadius
-        imageView.image = UIImage(systemName: "globe.asia.australia")
+        if let urlString = item.imageUrl {
+            imageView.sd_setImage(with: URL(string: urlString))
+        }
         nameLabel.text = item.name
     }
 }

@@ -9,6 +9,8 @@ import Foundation
 
 struct CollectionViewModel {
     var galleries: [Gallery]
+    var pageKey: String?
+    var totalCount: Int
 }
 
 struct Gallery {

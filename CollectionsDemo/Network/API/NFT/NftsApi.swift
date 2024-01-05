@@ -13,6 +13,7 @@ struct NftsApi {
         typealias ResponseType = NftApiResponse
         
         private let pageSize: Int
+        private let pageKey: String?
         
         var path: String {
             getNFTsForOwner()
@@ -23,19 +24,27 @@ struct NftsApi {
         }
         
         var task: Task {
-            let parameters: [String: Any] = [
+            var parameters: [String: Any] = [
                 "owner": ApiConstants.owner,
                 "withMetadata": "true",
                 "pageSize": pageSize
             ]
+            
+            if let pageKey = pageKey {
+                parameters["pageKey"] = pageKey
+            }
             return .requestParameters(
                 parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         }
         
-        init(pageSize: Int) {
+        init(
+            pageSize: Int,
+            pageKey: String?
+        ) {
             self.pageSize = pageSize
+            self.pageKey = pageKey
         }
     }
 }

@@ -19,6 +19,7 @@ struct NetworkDecoder {
             let response = try JSONDecoder().decode(T.self, from: from)
             return response
         } catch {
+            print("[Error] Api response decoding failed: \(error)")
             throw error
         }
     }

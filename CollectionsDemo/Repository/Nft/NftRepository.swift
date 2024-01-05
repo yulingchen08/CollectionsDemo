@@ -9,7 +9,10 @@ import Foundation
 import RxSwift
 
 protocol NftRepositoryProtocol: AnyObject {
-    func getNFTsForOwner(pageSize: Int) -> Single<CollectionViewModel>
+    func getNFTsForOwner(
+        pageSize: Int,
+        pageKey: String?
+    ) -> Single<CollectionViewModel>
 }
 
 class NftRepository: BaseRepository {
@@ -24,8 +27,14 @@ class NftRepository: BaseRepository {
 }
 
 extension NftRepository: NftRepositoryProtocol {
-    func getNFTsForOwner(pageSize: Int) -> Single<CollectionViewModel> {
-        let request = NftsApi.getNFTsForOwner(pageSize: 1)
+    func getNFTsForOwner(
+        pageSize: Int,
+        pageKey: String?
+    ) -> Single<CollectionViewModel> {
+        let request = NftsApi.getNFTsForOwner(
+            pageSize: pageSize,
+            pageKey: pageKey
+        )
         return network.request(request)
             .flatMap { [unowned self] response in
                 let viewModel = self.viewModelMapper.map(response: response)

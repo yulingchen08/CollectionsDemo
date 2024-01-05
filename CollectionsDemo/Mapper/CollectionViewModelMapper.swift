@@ -26,6 +26,10 @@ class CollectionViewModelMapper: CollectionViewModelMapping {
                 imageUrl: imageUrl
             )
         }
-        return CollectionViewModel(galleries: galleries)
+        return CollectionViewModel(
+            galleries: galleries,
+            pageKey: response.pageKey,
+            totalCount: response.totalCount
+        )
     }
 }
