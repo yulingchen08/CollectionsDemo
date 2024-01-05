@@ -40,6 +40,10 @@
 		DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */; };
 		DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */; };
 		DB325BFC2B4742CA00E57953 /* CollectionViewModelMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */; };
+		DB325BFF2B4796A500E57953 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325BFE2B4796A500E57953 /* AppCoordinator.swift */; };
+		DB325C012B4796C500E57953 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C002B4796C500E57953 /* Coordinator.swift */; };
+		DB325C042B47976300E57953 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C032B47976300E57953 /* BaseNavigationController.swift */; };
+		DB325C062B47D03400E57953 /* CollectionListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C052B47D03400E57953 /* CollectionListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapperMock.swift; sourceTree = "<group>"; };
 		DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelMapperTest.swift; sourceTree = "<group>"; };
+		DB325BFE2B4796A500E57953 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DB325C002B4796C500E57953 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DB325C032B47976300E57953 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		DB325C052B47D03400E57953 /* CollectionListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +156,8 @@
 		DB325B782B450C7800E57953 /* CollectionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB325C022B47975100E57953 /* View */,
+				DB325BFD2B47967E00E57953 /* Coordinator */,
 				DB325BEC2B4713D700E57953 /* Collections */,
 				DB325BE92B4712BF00E57953 /* Mapper */,
 				DB325BCF2B45BD2F00E57953 /* Repository */,
@@ -289,6 +299,24 @@
 				DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		DB325BFD2B47967E00E57953 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BFE2B4796A500E57953 /* AppCoordinator.swift */,
+				DB325C002B4796C500E57953 /* Coordinator.swift */,
+				DB325C052B47D03400E57953 /* CollectionListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DB325C022B47975100E57953 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB325C032B47976300E57953 /* BaseNavigationController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,15 +469,19 @@
 				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
 				DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */,
 				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
+				DB325C042B47976300E57953 /* BaseNavigationController.swift in Sources */,
 				DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */,
 				DB325BBB2B45618B00E57953 /* NetworkProvider.swift in Sources */,
 				DB325B7A2B450C7800E57953 /* AppDelegate.swift in Sources */,
 				DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */,
+				DB325C012B4796C500E57953 /* Coordinator.swift in Sources */,
 				DB325BE52B47101000E57953 /* BaseRepository.swift in Sources */,
 				DB325BCB2B45B50600E57953 /* NftsApi.swift in Sources */,
 				DB325BC82B45A92E00E57953 /* NetworkError.swift in Sources */,
+				DB325BFF2B4796A500E57953 /* AppCoordinator.swift in Sources */,
 				DB325BCE2B45B92200E57953 /* NftApiResponse.swift in Sources */,
 				DB325BC42B45A7C000E57953 /* BaseResponse.swift in Sources */,
+				DB325C062B47D03400E57953 /* CollectionListCoordinator.swift in Sources */,
 				DB325B7C2B450C7800E57953 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
