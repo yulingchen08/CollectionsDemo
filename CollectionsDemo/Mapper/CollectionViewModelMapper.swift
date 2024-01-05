@@ -14,11 +14,10 @@ protocol CollectionViewModelMapping {
 class CollectionViewModelMapper: CollectionViewModelMapping {
     func map(response: NftApiResponse) -> CollectionViewModel {
         let galleries = response.ownedNfts.map {
-            let contract = $0.contract
-            let contractName = contract.name
-            let name = contract.openSeaMetadata.collectionName
-            let description = contract.openSeaMetadata.description
-            let imageUrl = contract.openSeaMetadata.imageUrl
+            let contractName = $0.contract.name
+            let name = $0.name
+            let description = $0.description
+            let imageUrl = $0.image.originalUrl
             
             return Gallery(
                 contractName: contractName,

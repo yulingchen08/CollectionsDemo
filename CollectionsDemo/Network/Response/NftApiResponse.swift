@@ -16,46 +16,53 @@ struct NftApiResponse: Codable {
 
 struct OwnedNft: Codable {
     let contract: Contract
-    let tokenId, tokenType, name, description: String?
+    let tokenId: String?
+    let tokenType: String?
+    let name: String
+    let description: String?
+    let owners: String?
     let tokenUri: String
     let image: Image
-    let raw: Raw
-    let collection: Collection
-    let owners: String?
+    let collection: Collection?
     let timeLastUpdated: String
     let balance: String
 }
 
 struct Collection: Codable {
-    let name, slug, externalUrl: String?
+    let name: String?
+    let slug: String?
+    let externalUrl: String?
     let bannerImageUrl: String?
 }
 
 struct Contract: Codable {
-    let address, name, symbol: String
+    let address: String
+    let name: String
+    let symbol: String
     let totalSupply: String?
-    let tokenType, contractDeployer: String
+    let tokenType: String
+    let contractDeployer: String
     let deployedBlockNumber: Int
     let openSeaMetadata: OpenSeaMetadata
-    let isSpam: Bool
-    let spamClassifications: [String]
+    let isSpam: Bool?
 }
 
 struct Image: Codable {
-    let cachedUrl, thumbnailUrl, pngUrl, contentType: String?
-    let size, originalUrl: String?
+    let cachedUrl: String?
+    let thumbnailUrl: String?
+    let pngUrl: String?
+    let contentType: String?
+    let size: Int
+    let originalUrl: String?
 }
 
 struct OpenSeaMetadata: Codable {
-    let floorPrice: Int
-    let collectionName, collectionSlug, safelistRequestStatus: String
-    let imageUrl, description: String?
-}
-
-struct Raw: Codable {
-    let tokenUri: String
-    let metadata: [String: String]
-    let error: String?
+    let floorPrice: Int?
+    let collectionName: String?
+    let collectionSlug: String?
+    let safelistRequestStatus: String?
+    let imageUrl: String?
+    let description: String?
 }
 
 struct ValidAt: Codable {

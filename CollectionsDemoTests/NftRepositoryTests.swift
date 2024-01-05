@@ -92,32 +92,26 @@ extension NftApiResponse {
                         deployedBlockNumber: 0,
                         openSeaMetadata: OpenSeaMetadata(
                             floorPrice: 0,
-                            collectionName: "Mona Lisa Smile",
+                            collectionName: "",
                             collectionSlug: "",
                             safelistRequestStatus: "",
-                            imageUrl: "https:xxx",
-                            description: "Mona Lisa Smile is a 2003 American drama film produced by Revolution Studios"
+                            imageUrl: "",
+                            description: ""
                         ),
-                        isSpam: false,
-                        spamClassifications: []
+                        isSpam: false
                     ),
                     tokenId: nil,
                     tokenType: nil,
-                    name: nil,
-                    description: nil,
-                    tokenUri: "",
+                    name: "Mona Lisa Smile",
+                    description: "Mona Lisa Smile is a 2003 American drama film produced by Revolution Studios",
+                    owners: nil, tokenUri: "",
                     image: Image(
                         cachedUrl: nil,
                         thumbnailUrl: nil,
                         pngUrl: nil,
                         contentType: nil,
-                        size: nil,
-                        originalUrl: nil
-                    ),
-                    raw: Raw(
-                        tokenUri: "",
-                        metadata: [:],
-                        error: nil
+                        size: 1728,
+                        originalUrl: "https:xxx"
                     ),
                     collection: Collection(
                         name: nil,
@@ -125,7 +119,6 @@ extension NftApiResponse {
                         externalUrl: nil,
                         bannerImageUrl: nil
                     ),
-                    owners: nil,
                     timeLastUpdated: "",
                     balance: ""
                 )

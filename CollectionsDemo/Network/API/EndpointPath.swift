@@ -10,7 +10,7 @@ import Foundation
 struct ApiConstants {
     // TODO: Need to encrypt API key, but this is not the focus of the current assignment. Will address this in a later update.
     static let apikey = "BqxcH1X0nbDP0LnkCVoOHcl1ENyncboD"
-    static let owner = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+    static let owner = "0x85fD692D2a075908079261F5E351e7fE0267dB02"
 }
 
 
@@ -18,7 +18,7 @@ protocol EndpointPath {}
 
 extension EndpointPath {
     var alchemy: String {
-        "https://eth-mainnet.g.alchemy.com/nft/v3/"
+        "https://eth-goerli.g.alchemy.com/nft/v3/"
     }
 }
 
