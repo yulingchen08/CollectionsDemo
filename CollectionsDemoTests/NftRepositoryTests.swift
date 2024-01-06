@@ -30,7 +30,10 @@ final class NftRepositoryTests: XCTestCase {
         network.completeRequestSuccessfully(data: data)
         var viewModels = [CollectionViewModel]()
         
-        sut.getNFTsForOwner(pageSize: 1)
+        sut.getNFTsForOwner(
+            pageSize: 1,
+            pageKey: "key"
+        )
             .subscribe { viewModel in
                 viewModels.append(viewModel)
                 exp.fulfill()
@@ -53,7 +56,10 @@ final class NftRepositoryTests: XCTestCase {
         network.completeRequest(with: anyNSError())
         var receivedError: Error?
         
-        sut.getNFTsForOwner(pageSize: 1)
+        sut.getNFTsForOwner(
+            pageSize: 1,
+            pageKey: "key"
+        )
             .subscribe { _ in
             } onFailure: { error in
                 receivedError = error

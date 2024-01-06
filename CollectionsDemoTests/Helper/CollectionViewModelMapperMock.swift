@@ -14,6 +14,9 @@ final class CollectionViewModelMapperMock: CollectionViewModelMapping {
             contractName: "contractName",
             name: "name", description: "description"
         )
-        return CollectionViewModel(galleries: [gallery])
+        return CollectionViewModel(
+            galleries: [gallery],
+            totalCount: 1
+        )
     }
 }
