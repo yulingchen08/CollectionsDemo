@@ -51,6 +51,13 @@
 		DB325C182B49423600E57953 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C172B49423600E57953 /* Swinject */; };
 		DB325C1B2B49427B00E57953 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C1A2B49427B00E57953 /* DependencyContainer.swift */; };
 		DB325C1E2B4943DD00E57953 /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C1D2B4943DD00E57953 /* SwinjectAutoregistration */; };
+		DB325C202B49A7B900E57953 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C1F2B49A7B900E57953 /* AppCoordinatorTests.swift */; };
+		DB325C222B49A94900E57953 /* CollectionListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C212B49A94900E57953 /* CollectionListCoordinatorTests.swift */; };
+		DB325C272B49B29200E57953 /* NftRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C262B49B29200E57953 /* NftRepositoryMock.swift */; };
+		DB325C292B49B31200E57953 /* CollectionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C282B49B31200E57953 /* CollectionListViewModelTests.swift */; };
+		DBC0C6C12B49C48C008A93A9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C02B49C48C008A93A9 /* CoordinatorTests.swift */; };
+		DBC0C6C32B49C54A008A93A9 /* TestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C22B49C54A008A93A9 /* TestCoordinator.swift */; };
+		DBC0C6C52B49C5D2008A93A9 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C42B49C5D2008A93A9 /* MockNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +119,13 @@
 		DB325C112B47D79000E57953 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
 		DB325C142B48587600E57953 /* CollectionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewModel.swift; sourceTree = "<group>"; };
 		DB325C1A2B49427B00E57953 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		DB325C1F2B49A7B900E57953 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		DB325C212B49A94900E57953 /* CollectionListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListCoordinatorTests.swift; sourceTree = "<group>"; };
+		DB325C262B49B29200E57953 /* NftRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NftRepositoryMock.swift; sourceTree = "<group>"; };
+		DB325C282B49B31200E57953 /* CollectionListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewModelTests.swift; sourceTree = "<group>"; };
+		DBC0C6C02B49C48C008A93A9 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		DBC0C6C22B49C54A008A93A9 /* TestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoordinator.swift; sourceTree = "<group>"; };
+		DBC0C6C42B49C5D2008A93A9 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,10 +206,11 @@
 		DB325B8F2B450C7B00E57953 /* CollectionsDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				DB325C252B49A9A000E57953 /* Collections */,
+				DB325C242B49A99000E57953 /* Repository */,
+				DB325C232B49A97000E57953 /* Coordinator */,
 				DB325BF22B472C9900E57953 /* Helper */,
 				DB325B902B450C7B00E57953 /* CollectionsDemoTests.swift */,
-				DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */,
-				DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */,
 			);
 			path = CollectionsDemoTests;
 			sourceTree = "<group>";
@@ -313,6 +328,9 @@
 				DB325BF32B472CB900E57953 /* NetworkServiceStub.swift */,
 				DB325BF52B472FBA00E57953 /* CollectionViewModelMapperMock.swift */,
 				DB325BF72B4735E700E57953 /* SharedTestHelpers.swift */,
+				DB325C262B49B29200E57953 /* NftRepositoryMock.swift */,
+				DBC0C6C22B49C54A008A93A9 /* TestCoordinator.swift */,
+				DBC0C6C42B49C5D2008A93A9 /* MockNavigationController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -367,6 +385,33 @@
 				DB325C1A2B49427B00E57953 /* DependencyContainer.swift */,
 			);
 			path = Dependency;
+			sourceTree = "<group>";
+		};
+		DB325C232B49A97000E57953 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DB325C1F2B49A7B900E57953 /* AppCoordinatorTests.swift */,
+				DB325C212B49A94900E57953 /* CollectionListCoordinatorTests.swift */,
+				DBC0C6C02B49C48C008A93A9 /* CoordinatorTests.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DB325C242B49A99000E57953 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BF02B472AE900E57953 /* NftRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DB325C252B49A9A000E57953 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */,
+				DB325C282B49B31200E57953 /* CollectionListViewModelTests.swift */,
+			);
+			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,8 +598,15 @@
 				DB325BF12B472AE900E57953 /* NftRepositoryTests.swift in Sources */,
 				DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */,
 				DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */,
+				DBC0C6C12B49C48C008A93A9 /* CoordinatorTests.swift in Sources */,
+				DBC0C6C32B49C54A008A93A9 /* TestCoordinator.swift in Sources */,
+				DB325C272B49B29200E57953 /* NftRepositoryMock.swift in Sources */,
+				DBC0C6C52B49C5D2008A93A9 /* MockNavigationController.swift in Sources */,
+				DB325C202B49A7B900E57953 /* AppCoordinatorTests.swift in Sources */,
 				DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */,
+				DB325C292B49B31200E57953 /* CollectionListViewModelTests.swift in Sources */,
 				DB325BF42B472CB900E57953 /* NetworkServiceStub.swift in Sources */,
+				DB325C222B49A94900E57953 /* CollectionListCoordinatorTests.swift in Sources */,
 				DB325BFC2B4742CA00E57953 /* CollectionViewModelMapperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

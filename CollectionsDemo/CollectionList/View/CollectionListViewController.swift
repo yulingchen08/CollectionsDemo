@@ -86,7 +86,7 @@ extension CollectionListViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return viewModel.dataSource.galleries.count
+        return viewModel.inputs.dataSource.galleries.count
     }
     
     func collectionView(
@@ -100,7 +100,7 @@ extension CollectionListViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let item = viewModel.dataSource.galleries[indexPath.item]
+        let item = viewModel.inputs.dataSource.galleries[indexPath.item]
         cell.configure(with: item)
         
         return cell
@@ -116,7 +116,7 @@ extension CollectionListViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row >= viewModel.dataSource.galleries.count - 1 {
+        if indexPath.row >= viewModel.inputs.dataSource.galleries.count - 1 {
             viewModel.inputs.fetchMoreCollections()
         }
     }

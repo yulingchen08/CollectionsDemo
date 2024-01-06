@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 protocol CollectionListViewModelInputsType {
+    var dataSource: CollectionViewModel { get set }
     func fetchMoreCollections()
     func initializeDataFetch()
 }
