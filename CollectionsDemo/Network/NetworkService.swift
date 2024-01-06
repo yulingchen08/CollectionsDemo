@@ -11,12 +11,10 @@ import RxSwift
 import Foundation
 
 public class NetworkService: NetworkServiceProviding {
-    public static let shared = NetworkService()
-    
     private let provider: NetworkProvider<MultiTarget>
     private var networkReachabilityManager = NetworkReachabilityManager()
     
-    init(provider: NetworkProvider<MultiTarget> = NetworkProvider<MultiTarget>()) {
+    init(provider: NetworkProvider<MultiTarget>) {
         self.provider = provider
     }
     

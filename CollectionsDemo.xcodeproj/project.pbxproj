@@ -45,10 +45,12 @@
 		DB325C042B47976300E57953 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C032B47976300E57953 /* BaseNavigationController.swift */; };
 		DB325C062B47D03400E57953 /* CollectionListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C052B47D03400E57953 /* CollectionListCoordinator.swift */; };
 		DB325C0A2B47D2BF00E57953 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C092B47D2BF00E57953 /* CollectionListViewController.swift */; };
-		DB325C0D2B47D6C200E57953 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C0C2B47D6C200E57953 /* SnapKit */; };
 		DB325C102B47D70B00E57953 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C0F2B47D70B00E57953 /* SDWebImage */; };
 		DB325C122B47D79000E57953 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C112B47D79000E57953 /* GalleryItemCell.swift */; };
 		DB325C152B48587600E57953 /* CollectionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C142B48587600E57953 /* CollectionListViewModel.swift */; };
+		DB325C182B49423600E57953 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C172B49423600E57953 /* Swinject */; };
+		DB325C1B2B49427B00E57953 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325C1A2B49427B00E57953 /* DependencyContainer.swift */; };
+		DB325C1E2B4943DD00E57953 /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = DB325C1D2B4943DD00E57953 /* SwinjectAutoregistration */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,7 @@
 		DB325C092B47D2BF00E57953 /* CollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
 		DB325C112B47D79000E57953 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
 		DB325C142B48587600E57953 /* CollectionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewModel.swift; sourceTree = "<group>"; };
+		DB325C1A2B49427B00E57953 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +119,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB325C1E2B4943DD00E57953 /* SwinjectAutoregistration in Frameworks */,
 				DB325C102B47D70B00E57953 /* SDWebImage in Frameworks */,
 				DB325BBE2B4561DE00E57953 /* SwiftyJSON in Frameworks */,
+				DB325C182B49423600E57953 /* Swinject in Frameworks */,
 				DB325BB32B45610E00E57953 /* RxSwift in Frameworks */,
 				DB325BE82B4710C300E57953 /* RxCocoa in Frameworks */,
 				DB325BB02B45605700E57953 /* Moya in Frameworks */,
-				DB325C0D2B47D6C200E57953 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +170,7 @@
 		DB325B782B450C7800E57953 /* CollectionsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DB325C192B49426E00E57953 /* Dependency */,
 				DB325C072B47D29E00E57953 /* CollectionList */,
 				DB325C022B47975100E57953 /* View */,
 				DB325BFD2B47967E00E57953 /* Coordinator */,
@@ -356,6 +361,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DB325C192B49426E00E57953 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				DB325C1A2B49427B00E57953 /* DependencyContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,8 +390,9 @@
 				DB325BB22B45610E00E57953 /* RxSwift */,
 				DB325BBD2B4561DE00E57953 /* SwiftyJSON */,
 				DB325BE72B4710C300E57953 /* RxCocoa */,
-				DB325C0C2B47D6C200E57953 /* SnapKit */,
 				DB325C0F2B47D70B00E57953 /* SDWebImage */,
+				DB325C172B49423600E57953 /* Swinject */,
+				DB325C1D2B4943DD00E57953 /* SwinjectAutoregistration */,
 			);
 			productName = CollectionsDemo;
 			productReference = DB325B762B450C7800E57953 /* CollectionsDemo.app */;
@@ -456,8 +470,9 @@
 				DB325BAE2B45605700E57953 /* XCRemoteSwiftPackageReference "Moya" */,
 				DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				DB325BBC2B4561DE00E57953 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				DB325C0B2B47D6C200E57953 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DB325C0E2B47D70B00E57953 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				DB325C162B49423600E57953 /* XCRemoteSwiftPackageReference "Swinject" */,
+				DB325C1C2B4943DD00E57953 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 			);
 			productRefGroup = DB325B772B450C7800E57953 /* Products */;
 			projectDirPath = "";
@@ -508,6 +523,7 @@
 				DB325BAD2B455FA200E57953 /* NetworkServiceProviding.swift in Sources */,
 				DB325BEB2B4712EF00E57953 /* CollectionViewModelMapper.swift in Sources */,
 				DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */,
+				DB325C1B2B49427B00E57953 /* DependencyContainer.swift in Sources */,
 				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
 				DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */,
 				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
@@ -898,20 +914,28 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		DB325C0B2B47D6C200E57953 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.0;
-			};
-		};
 		DB325C0E2B47D70B00E57953 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.18.8;
+			};
+		};
+		DB325C162B49423600E57953 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+		DB325C1C2B4943DD00E57953 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -937,15 +961,20 @@
 			package = DB325BB12B45610E00E57953 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		DB325C0C2B47D6C200E57953 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DB325C0B2B47D6C200E57953 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
 		DB325C0F2B47D70B00E57953 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DB325C0E2B47D70B00E57953 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		DB325C172B49423600E57953 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325C162B49423600E57953 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		DB325C1D2B4943DD00E57953 /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB325C1C2B4943DD00E57953 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

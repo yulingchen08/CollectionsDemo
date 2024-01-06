@@ -19,7 +19,7 @@ class NftRepository: BaseRepository {
     private let viewModelMapper: CollectionViewModelMapping
     init(
         viewModelMapper: CollectionViewModelMapping,
-        network: NetworkServiceProviding = NetworkService.shared
+        network: NetworkServiceProviding
     ) {
         self.viewModelMapper = viewModelMapper
         super.init(network: network)

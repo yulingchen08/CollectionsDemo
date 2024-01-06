@@ -13,7 +13,7 @@ class BaseRepository {
     var network: NetworkServiceProviding
     var disposeBag = DisposeBag()
     
-    init(network: NetworkServiceProviding = NetworkService.shared) {
+    init(network: NetworkServiceProviding) {
         self.network = network
     }
 }

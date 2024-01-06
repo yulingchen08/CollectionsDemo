@@ -13,7 +13,7 @@ class CollectionListCoordinator: Coordinator {
     
     init(navigation: BaseNavigationController? = nil) {
         self.navigation = navigation
-        let repository = NftRepository(viewModelMapper: CollectionViewModelMapper())
+        let repository: NftRepositoryProtocol = DependencyContainer.shared.getService()
         let viewModel = CollectionListViewModel(nftRepository: repository)
         self.rootViewController = CollectionListViewController(viewModel: viewModel)
     }
