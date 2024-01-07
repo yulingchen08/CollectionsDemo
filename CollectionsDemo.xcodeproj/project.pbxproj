@@ -58,6 +58,7 @@
 		DBC0C6C12B49C48C008A93A9 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C02B49C48C008A93A9 /* CoordinatorTests.swift */; };
 		DBC0C6C32B49C54A008A93A9 /* TestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C22B49C54A008A93A9 /* TestCoordinator.swift */; };
 		DBC0C6C52B49C5D2008A93A9 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6C42B49C5D2008A93A9 /* MockNavigationController.swift */; };
+		DBC0C6CB2B4AF5F6008A93A9 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = DBC0C6CA2B4AF5F6008A93A9 /* SDWebImageSVGCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 				DB325C1E2B4943DD00E57953 /* SwinjectAutoregistration in Frameworks */,
 				DB325C102B47D70B00E57953 /* SDWebImage in Frameworks */,
 				DB325BBE2B4561DE00E57953 /* SwiftyJSON in Frameworks */,
+				DBC0C6CB2B4AF5F6008A93A9 /* SDWebImageSVGCoder in Frameworks */,
 				DB325C182B49423600E57953 /* Swinject in Frameworks */,
 				DB325BB32B45610E00E57953 /* RxSwift in Frameworks */,
 				DB325BE82B4710C300E57953 /* RxCocoa in Frameworks */,
@@ -438,6 +440,7 @@
 				DB325C0F2B47D70B00E57953 /* SDWebImage */,
 				DB325C172B49423600E57953 /* Swinject */,
 				DB325C1D2B4943DD00E57953 /* SwinjectAutoregistration */,
+				DBC0C6CA2B4AF5F6008A93A9 /* SDWebImageSVGCoder */,
 			);
 			productName = CollectionsDemo;
 			productReference = DB325B762B450C7800E57953 /* CollectionsDemo.app */;
@@ -518,6 +521,7 @@
 				DB325C0E2B47D70B00E57953 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				DB325C162B49423600E57953 /* XCRemoteSwiftPackageReference "Swinject" */,
 				DB325C1C2B4943DD00E57953 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+				DBC0C6C92B4AF5F6008A93A9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 			);
 			productRefGroup = DB325B772B450C7800E57953 /* Products */;
 			projectDirPath = "";
@@ -992,6 +996,14 @@
 				minimumVersion = 2.8.3;
 			};
 		};
+		DBC0C6C92B4AF5F6008A93A9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1029,6 +1041,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB325C1C2B4943DD00E57953 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
 			productName = SwinjectAutoregistration;
+		};
+		DBC0C6CA2B4AF5F6008A93A9 /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBC0C6C92B4AF5F6008A93A9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

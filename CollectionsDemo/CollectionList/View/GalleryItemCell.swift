@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-import SnapKit
+
 
 class GalleryItemCell: UICollectionViewCell {
     private enum Constants {

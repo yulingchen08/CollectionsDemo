@@ -51,7 +51,7 @@ struct Image: Codable {
     let cachedUrl: String?
     let thumbnailUrl: String?
     let pngUrl: String?
-    let contentType: String?
+    let contentType: ContentType
     let size: Int?
     let originalUrl: String?
 }
@@ -69,4 +69,33 @@ struct ValidAt: Codable {
     let blockNumber: Int
     let blockHash: String
     let blockTimestamp: String
+}
+
+enum ContentType: String, Codable {
+    case png = "image/png"
+    case jpeg = "image/jpeg"
+    case svg = "image/svg+xml"
+    case webp = "image/webp"
+    case unowned
+    case none
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        guard let contentTypeString = try? container.decode(String.self) else {
+            self = .none
+            return
+        }
+        switch contentTypeString {
+        case "image/png":
+            self = .png
+        case "image/jpeg":
+            self = .jpeg
+        case "image/svg+xml":
+            self = .svg
+        case "image/webp":
+            self = .webp
+        default:
+            self = .unowned
+        }
+    }
 }

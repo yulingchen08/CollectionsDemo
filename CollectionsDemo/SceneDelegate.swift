@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         _ = DependencyContainer.shared
+        setupSVGCoder()
         self.window = window
         coordinator.start()
         window.makeKeyAndVisible()
@@ -53,5 +55,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+private extension SceneDelegate {
+    func setupSVGCoder() {
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+    }
 }
 
