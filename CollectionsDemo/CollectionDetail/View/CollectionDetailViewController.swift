@@ -102,6 +102,7 @@ class CollectionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupAccessibilityIdentifiers()
         updateView()
     }
 }
@@ -155,6 +156,13 @@ private extension CollectionDetailViewController {
             target: self,
             action: #selector(backButtonTapped)
         )
+    }
+    
+    func setupAccessibilityIdentifiers() {
+        imageView.accessibilityIdentifier = Accessibility.detailImageView
+        nameLabel.accessibilityIdentifier = Accessibility.detailNameLabel
+        descriptionLabel.accessibilityIdentifier = Accessibility.detailDescriptionLabel
+        openseaButton.accessibilityIdentifier = Accessibility.detailOpenseaButton
     }
     
     @objc func backButtonTapped() {

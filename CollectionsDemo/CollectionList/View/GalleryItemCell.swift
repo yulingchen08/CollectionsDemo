@@ -41,6 +41,7 @@ class GalleryItemCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupAccessibilityIdentifiers()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -73,6 +74,11 @@ class GalleryItemCell: UICollectionViewCell {
             nameLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: borderView.bottomAnchor)
         ])
+    }
+    
+    private func setupAccessibilityIdentifiers() {
+        imageView.accessibilityIdentifier = Accessibility.galleryImageView
+        nameLabel.accessibilityIdentifier = Accessibility.galleryNameLabel
     }
 
     func configure(with item: Gallery) {

@@ -50,6 +50,7 @@ class CollectionListViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         setupNavigationBar()
+        setupAccessibilityIdentifiers()
         bindViewModel()
         viewModel.inputs.onViewDidLoad()
     }
@@ -72,12 +73,17 @@ private extension CollectionListViewController {
         navigationItem.title = "List"
     }
     
+    func setupAccessibilityIdentifiers() {
+        collectionView.accessibilityIdentifier = Accessibility.listCollection
+    }
+    
     func updateBalance(_ balance: String?) {
         guard let balance else { return }
         let balanceLabel = UILabel()
         balanceLabel.text = "Balance: \(balance)"
         balanceLabel.textColor = UIColor.black
         balanceLabel.font = UIFont.systemFont(ofSize: Constants.balanceFontSize)
+        balanceLabel.accessibilityIdentifier = Accessibility.balanceButton
         let balanceItem = UIBarButtonItem(customView: balanceLabel)
         navigationItem.rightBarButtonItem = balanceItem
     }

@@ -64,6 +64,9 @@
 		DBF0E8BB2B4BCD6E003FA149 /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */; };
 		DBF0E8BD2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BC2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift */; };
 		DBF0E8BF2B4BEC2A003FA149 /* ContentTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BE2B4BEC2A003FA149 /* ContentTypeTests.swift */; };
+		DBF0E8C12B4BF176003FA149 /* CollectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8C02B4BF176003FA149 /* CollectionsUITests.swift */; };
+		DBF0E8C32B4C130B003FA149 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8C22B4C130B003FA149 /* Accessibility.swift */; };
+		DBF0E8C42B4C1891003FA149 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8C22B4C130B003FA149 /* Accessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,8 @@
 		DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
 		DBF0E8BC2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewModelTests.swift; sourceTree = "<group>"; };
 		DBF0E8BE2B4BEC2A003FA149 /* ContentTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeTests.swift; sourceTree = "<group>"; };
+		DBF0E8C02B4BF176003FA149 /* CollectionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsUITests.swift; sourceTree = "<group>"; };
+		DBF0E8C22B4C130B003FA149 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +216,7 @@
 				DB325B822B450C7B00E57953 /* Assets.xcassets */,
 				DB325B842B450C7B00E57953 /* LaunchScreen.storyboard */,
 				DB325B872B450C7B00E57953 /* Info.plist */,
+				DBF0E8C22B4C130B003FA149 /* Accessibility.swift */,
 			);
 			path = CollectionsDemo;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			children = (
 				DB325B9A2B450C7C00E57953 /* CollectionsDemoUITests.swift */,
 				DB325B9C2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift */,
+				DBF0E8C02B4BF176003FA149 /* CollectionsUITests.swift */,
 			);
 			path = CollectionsDemoUITests;
 			sourceTree = "<group>";
@@ -614,6 +621,7 @@
 				DB325BB92B45616F00E57953 /* NetworkPrinter.swift in Sources */,
 				DB325BEF2B47141500E57953 /* CollectionViewModel.swift in Sources */,
 				DB325BD22B45BD5600E57953 /* NftRepository.swift in Sources */,
+				DBF0E8C32B4C130B003FA149 /* Accessibility.swift in Sources */,
 				DB325C042B47976300E57953 /* BaseNavigationController.swift in Sources */,
 				DBC0C6D52B4B0EE3008A93A9 /* CollectionDetailViewModel.swift in Sources */,
 				DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */,
@@ -663,7 +671,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF0E8C12B4BF176003FA149 /* CollectionsUITests.swift in Sources */,
 				DB325B9B2B450C7C00E57953 /* CollectionsDemoUITests.swift in Sources */,
+				DBF0E8C42B4C1891003FA149 /* Accessibility.swift in Sources */,
 				DB325B9D2B450C7C00E57953 /* CollectionsDemoUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
