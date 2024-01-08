@@ -18,6 +18,7 @@ class CollectionListViewController: UIViewController {
         static let cellHeight: CGFloat = 200.0
         static let interItemSpace: CGFloat = 8.0
         static let lineSpace: CGFloat = 16.0
+        static let balanceFontSize: CGFloat = 8.0
     }
     weak var delegate: CollectionListViewControllerDelegate?
     private lazy var collectionView: UICollectionView = {
@@ -50,7 +51,7 @@ class CollectionListViewController: UIViewController {
         configureCollectionView()
         setupNavigationBar()
         bindViewModel()
-        viewModel.inputs.initializeDataFetch()
+        viewModel.inputs.onViewDidLoad()
     }
 }
 
@@ -71,11 +72,26 @@ private extension CollectionListViewController {
         navigationItem.title = "List"
     }
     
+    func updateBalance(_ balance: String?) {
+        guard let balance else { return }
+        let balanceLabel = UILabel()
+        balanceLabel.text = "Balance: \(balance)"
+        balanceLabel.textColor = UIColor.black
+        balanceLabel.font = UIFont.systemFont(ofSize: Constants.balanceFontSize)
+        let balanceItem = UIBarButtonItem(customView: balanceLabel)
+        navigationItem.rightBarButtonItem = balanceItem
+    }
+    
     func bindViewModel() {
         viewModel.outputs.presentCollectionCell = { [weak self] in
-            print("in presentPlaylistCell")
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
+            }
+        }
+        
+        viewModel.outputs.updateBalance = { [weak self] balance in
+            DispatchQueue.main.async {
+                self?.updateBalance(balance)
             }
         }
     }
