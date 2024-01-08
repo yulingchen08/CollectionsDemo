@@ -13,7 +13,7 @@ class CollectionDetailCoordinator:  Coordinator {
     init(navigation: BaseNavigationController? = nil) {
         self.navigation = navigation
     }
-    
+
     func start(gallery: Gallery) {
         guard let navigation = navigation else { return }
         let viewModel = CollectionDetailViewModel(gallery: gallery)

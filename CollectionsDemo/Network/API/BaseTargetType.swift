@@ -30,4 +30,3 @@ extension ResponseTargetType {
         "".data(using: String.Encoding.utf8)!
     }
 }
-

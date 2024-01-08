@@ -31,10 +31,10 @@ class CollectionListViewModel: PlaylistViewModelType,
         static let initialLoadCount = 20
         static let nextPageLoadCount = 20
     }
-    
+
     var inputs: CollectionListViewModelInputsType { return self }
     var outputs: CollectionListViewModelOutputsType { return self }
-    
+
     var nftRepository: NftRepositoryProtocol
     let disposeBag = DisposeBag()
     var dataSource: CollectionViewModel = .init(
@@ -42,24 +42,24 @@ class CollectionListViewModel: PlaylistViewModelType,
         pageKey: nil,
         totalCount: 0
     )
-    
+
     init(nftRepository: NftRepositoryProtocol) {
         self.nftRepository = nftRepository
     }
-    
-    //MARK: - Inputs
+
+    // MARK: - Inputs
     func onViewDidLoad() {
         updateCollection(pageSize: Constants.initialLoadCount)
         fetchBalance()
     }
-    
+
     func fetchMoreCollections() {
         let remainingCount = dataSource.totalCount - dataSource.galleries.count
         let size = remainingCount >= Constants.nextPageLoadCount ? Constants.nextPageLoadCount: remainingCount
         guard size > 0 else { return }
         updateCollection(pageSize: size)
     }
-    
+
     var presentCollectionCell: (() -> Void) = {}
     var updateBalance:((String?) -> Void) = {_ in }
 }
@@ -73,9 +73,8 @@ private extension CollectionListViewModel {
             } onFailure: { error in
                 print("[Error] getBalance error: \(error.localizedDescription)")
             }.disposed(by: disposeBag)
-        
     }
-    
+
     func updateCollection(pageSize: Int) {
         nftRepository.getNFTsForOwner(
             pageSize: pageSize,
@@ -90,20 +89,20 @@ private extension CollectionListViewModel {
             print("[Error] updateCollection error: \(error.localizedDescription)")
         }.disposed(by: disposeBag)
     }
-    
+
     func convertBalance(with hexString: String) -> String {
         var cleanedHexString = hexString
         if hexString.hasPrefix("0x") {
             cleanedHexString = String(hexString.dropFirst(2))
         }
-        
+
         guard let intValue = Int(
             cleanedHexString,
             radix: 16
         ) else {
             return "no data"
         }
-        
+
         return String(intValue)
     }
 }

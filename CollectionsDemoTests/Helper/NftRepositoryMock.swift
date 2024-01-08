@@ -10,13 +10,13 @@ import RxSwift
 @testable import CollectionsDemo
 
 class NftRepositoryMock: NftRepositoryProtocol {
-    
+
     private var shouldReturnError: Bool = false
-    
+
     func setShouldReturnError(_ shouldReturnError: Bool) {
         self.shouldReturnError = shouldReturnError
     }
-    
+
     func getNFTsForOwner(pageSize: Int, pageKey: String?) -> Single<CollectionViewModel> {
         if shouldReturnError {
             return Single.error(NSError(domain: "MockErrorDomain", code: 1, userInfo: nil))
@@ -26,7 +26,7 @@ class NftRepositoryMock: NftRepositoryProtocol {
             return Single.just(viewModel)
         }
     }
-    
+
     func getBalance() -> RxSwift.Single<String> {
         Single.just("1234567")
     }
@@ -47,7 +47,7 @@ extension CollectionViewModel {
             totalCount: 1
         )
     }
-    
+
     static var mockWithRemainingCount: CollectionViewModel {
         CollectionViewModel(
             galleries: [
@@ -69,7 +69,7 @@ extension CollectionViewModel {
             totalCount: 3
         )
     }
-    
+
     static var mockWithoutRemainingCount: CollectionViewModel {
         CollectionViewModel(
             galleries: [
@@ -92,7 +92,7 @@ extension CollectionViewModel {
             totalCount: 2
         )
     }
-    
+
     static var mockWithMoreRemainingCount: CollectionViewModel {
         CollectionViewModel(
             galleries: [

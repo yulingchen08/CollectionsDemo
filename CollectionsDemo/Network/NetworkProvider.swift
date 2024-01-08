@@ -24,5 +24,3 @@ class NetworkProvider<Target>: MoyaProvider<Target> where Target: TargetType {
         )
     }
 }
-
-

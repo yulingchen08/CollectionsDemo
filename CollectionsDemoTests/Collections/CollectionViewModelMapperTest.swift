@@ -10,17 +10,17 @@ import XCTest
 @testable import CollectionsDemo
 
 final class CollectionViewModelMapperTest: XCTestCase {
-    
+
     private var sut: CollectionViewModelMapping!
-    
+
     override func setUpWithError() throws {
         sut = CollectionViewModelMapper()
     }
-    
+
     override func tearDownWithError() throws {
         sut = nil
     }
-    
+
     func testMapResponse() throws {
         let response = NftApiResponse.mock
         let viewModel = sut.map(response: response)

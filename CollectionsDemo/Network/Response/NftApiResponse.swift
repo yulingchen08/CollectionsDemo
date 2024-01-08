@@ -78,7 +78,7 @@ enum ContentType: String, Codable {
     case webp = "image/webp"
     case unowned
     case none
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         guard let contentTypeString = try? container.decode(String.self) else {

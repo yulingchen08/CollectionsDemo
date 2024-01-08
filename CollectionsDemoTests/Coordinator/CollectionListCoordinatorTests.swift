@@ -11,25 +11,25 @@ import XCTest
 final class CollectionListCoordinatorTests: XCTestCase {
     private var navigation: BaseNavigationController!
     private var sut: CollectionListCoordinator!
-    
+
     override func setUpWithError() throws {
         navigation = BaseNavigationController()
         sut = CollectionListCoordinator(navigation: navigation)
     }
-    
+
     override func tearDownWithError() throws {
         navigation = nil
         sut = nil
     }
-    
+
     func testStart() throws {
         let delegateSpy = DelegateSpy()
         sut.start()
-        
+
         XCTAssertEqual(navigation.viewControllers.count, 1)
         XCTAssertTrue(navigation.viewControllers.first is CollectionListViewController)
         XCTAssertNotNil(sut.rootViewController.delegate)
-        
+
         sut.rootViewController.delegate = delegateSpy
         sut.rootViewController.delegate?.didClickCell(gallery: Gallery(
             tokenId: "",
@@ -40,13 +40,13 @@ final class CollectionListCoordinatorTests: XCTestCase {
         ))
         XCTAssertTrue(delegateSpy.didClickImageCalled)
     }
-    
+
     func testDidClickCell() {
         sut.start()
         let testGallery: Gallery = .mock
-        
+
         sut.didClickCell(gallery: testGallery)
-        
+
         XCTAssertNotNil(sut.collectionDetailCoordinator)
     }
 }

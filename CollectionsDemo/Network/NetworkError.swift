@@ -8,7 +8,6 @@
 import Foundation
 import Moya
 
-
 enum NetworkError: Error {
     case notReachable
     case httpError(error: MoyaError)
@@ -21,7 +20,7 @@ enum NetworkError: Error {
         error: Error,
         requestURL: URL?
     )
-    
+
     public var errorDomain: String {
         switch self {
         case .notReachable:
@@ -36,7 +35,7 @@ enum NetworkError: Error {
             return "Network-ResponseDataIsNull"
         }
     }
-    
+
     public var errorMessage: String {
         switch self {
         case .notReachable:

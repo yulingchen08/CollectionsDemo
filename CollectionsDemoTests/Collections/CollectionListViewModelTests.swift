@@ -10,7 +10,7 @@ import XCTest
 @testable import CollectionsDemo
 
 final class CollectionListViewModelTests: XCTestCase {
-    
+
     private var repository: NftRepositoryMock!
     private var disposeBag: DisposeBag!
     private var sut: CollectionListViewModel!
@@ -31,7 +31,7 @@ final class CollectionListViewModelTests: XCTestCase {
         sut.outputs.presentCollectionCell = {
             presentCollectionCellExpectation.fulfill()
         }
-        
+
         sut.inputs.onViewDidLoad()
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 1)
@@ -40,14 +40,14 @@ final class CollectionListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "A contractName")
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].name, "A name")
     }
-    
+
     func testFetchMoreCollectionsWithCountsLeft() {
         sut.dataSource = .mockWithRemainingCount
         let presentCollectionCellExpectation = expectation(description: "presentCollectionCell is called")
         sut.outputs.presentCollectionCell = {
             presentCollectionCellExpectation.fulfill()
         }
-        
+
         sut.inputs.fetchMoreCollections()
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 3)
@@ -56,14 +56,14 @@ final class CollectionListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "contract1")
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].name, "name1")
     }
-    
+
     func testFetchMoreCollectionsWithMoreThan20CountsLeft() {
         sut.dataSource = .mockWithMoreRemainingCount
         let presentCollectionCellExpectation = expectation(description: "presentCollectionCell is called")
         sut.outputs.presentCollectionCell = {
             presentCollectionCellExpectation.fulfill()
         }
-        
+
         sut.inputs.fetchMoreCollections()
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 3)
@@ -72,7 +72,7 @@ final class CollectionListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "contract one")
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].name, "name one")
     }
-    
+
     func testFetchMoreCollectionsWithoutCountsLeft() {
         sut.dataSource = .mockWithoutRemainingCount
         sut.inputs.fetchMoreCollections()
@@ -84,18 +84,18 @@ final class CollectionListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "contract1")
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].name, "name1")
     }
-    
+
     func testUpdateCollectionFailed() {
         repository.setShouldReturnError(true)
-        
+
         let expectation = XCTestExpectation(description: "Error is called")
-        
+
         sut.outputs.presentCollectionCell = {
             XCTFail("presentCollectionCell should not be called on error")
         }
-        
+
         sut.inputs.onViewDidLoad()
-        
+
         _ = XCTWaiter.wait(for: [expectation], timeout: 2.0)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 0)
         XCTAssertEqual(sut.inputs.dataSource.totalCount, 0)

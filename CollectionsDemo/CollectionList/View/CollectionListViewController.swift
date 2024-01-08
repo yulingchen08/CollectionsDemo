@@ -12,7 +12,7 @@ protocol CollectionListViewControllerDelegate: AnyObject {
 }
 
 class CollectionListViewController: UIViewController {
-    
+
     private enum Constants {
         static let cellId = "GalleryItemCell"
         static let cellHeight: CGFloat = 200.0
@@ -31,7 +31,7 @@ class CollectionListViewController: UIViewController {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    
+
     private let viewModel: CollectionListViewModel
 
     init(viewModel: CollectionListViewModel) {
@@ -41,11 +41,11 @@ class CollectionListViewController: UIViewController {
             bundle: nil
         )
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -59,7 +59,7 @@ class CollectionListViewController: UIViewController {
 private extension CollectionListViewController {
     func configureCollectionView() {
         view.addSubview(collectionView)
-        
+
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -67,16 +67,16 @@ private extension CollectionListViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
+
     func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "List"
     }
-    
+
     func setupAccessibilityIdentifiers() {
         collectionView.accessibilityIdentifier = Accessibility.listCollection
     }
-    
+
     func updateBalance(_ balance: String?) {
         guard let balance else { return }
         let balanceLabel = UILabel()
@@ -87,14 +87,14 @@ private extension CollectionListViewController {
         let balanceItem = UIBarButtonItem(customView: balanceLabel)
         navigationItem.rightBarButtonItem = balanceItem
     }
-    
+
     func bindViewModel() {
         viewModel.outputs.presentCollectionCell = { [weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
         }
-        
+
         viewModel.outputs.updateBalance = { [weak self] balance in
             DispatchQueue.main.async {
                 self?.updateBalance(balance)
@@ -110,21 +110,21 @@ extension CollectionListViewController: UICollectionViewDataSource {
     ) -> Int {
         return viewModel.inputs.dataSource.galleries.count
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell  {
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Constants.cellId,
             for: indexPath
         ) as? GalleryItemCell else {
             return UICollectionViewCell()
         }
-        
+
         let item = viewModel.inputs.dataSource.galleries[indexPath.item]
         cell.configure(with: item)
-        
+
         return cell
     }
 }
@@ -138,7 +138,7 @@ extension CollectionListViewController: UICollectionViewDelegate {
             gallery: viewModel.inputs.dataSource.galleries[indexPath.row]
         )
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row >= viewModel.inputs.dataSource.galleries.count - 1 {
             viewModel.inputs.fetchMoreCollections()
@@ -147,7 +147,7 @@ extension CollectionListViewController: UICollectionViewDelegate {
 }
 
 extension CollectionListViewController: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -158,7 +158,7 @@ extension CollectionListViewController: UICollectionViewDelegateFlowLayout {
             height: Constants.cellHeight
         )
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -166,7 +166,7 @@ extension CollectionListViewController: UICollectionViewDelegateFlowLayout {
     ) -> CGFloat {
         Constants.interItemSpace
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -174,7 +174,7 @@ extension CollectionListViewController: UICollectionViewDelegateFlowLayout {
     ) -> CGFloat {
         Constants.lineSpace
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,

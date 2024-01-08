@@ -5,7 +5,6 @@
 //  Created by 陳鈺翎 on 2024/1/5.
 //
 
-
 import RxSwift
 import XCTest
 @testable import CollectionsDemo
@@ -14,22 +13,22 @@ final class NftRepositoryTests: XCTestCase {
     private var sut: NftRepository!
     private var network: NetworkServiceStub!
     private let disposeBag = DisposeBag()
-    
+
     override func setUpWithError() throws {
         (sut, network) = makeSUT()
     }
-    
+
     override func tearDownWithError() throws {
         sut = nil
         network = nil
     }
-    
+
     func testGetNFTsForOwnerSucceeded() throws {
         let data = makeSampleData(NftApiResponse.mock)
         let exp = expectation(description: "testGetNFTsForOwnerSuccess expectation")
         network.completeRequestSuccessfully(data: data)
         var viewModels = [CollectionViewModel]()
-        
+
         sut.getNFTsForOwner(
             pageSize: 1,
             pageKey: "key"
@@ -40,9 +39,9 @@ final class NftRepositoryTests: XCTestCase {
             } onFailure: { error in
                 XCTFail("Expected success, but got onFailure with error: \(error.localizedDescription)")
             }.disposed(by: disposeBag)
-        
+
         wait(for: [exp], timeout: 5.0)
-        
+
         XCTAssertEqual(viewModels.count, 1)
         XCTAssertEqual(viewModels[0].galleries.count, 1)
         XCTAssertEqual(viewModels[0].galleries[0].contractName, "contractName")
@@ -53,12 +52,12 @@ final class NftRepositoryTests: XCTestCase {
         let description = try XCTUnwrap(viewModels[0].galleries[0].description)
         XCTAssertEqual(description, "description")
     }
-    
+
     func testGetNFTsForOwnerFailed() throws {
         let exp = expectation(description: "testGetNFTsForOwnerFailed expectation")
         network.completeRequest(with: anyNSError())
         var receivedError: Error?
-        
+
         sut.getNFTsForOwner(
             pageSize: 1,
             pageKey: "key"
@@ -68,7 +67,7 @@ final class NftRepositoryTests: XCTestCase {
             exp.fulfill()
         }.disposed(by: disposeBag)
         wait(for: [exp], timeout: 5.0)
-        
+
         XCTAssertNotNil(receivedError, "Recevied any errors")
     }
 }

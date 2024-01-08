@@ -13,11 +13,11 @@ import Foundation
 public class NetworkService: NetworkServiceProviding {
     private let provider: NetworkProvider<MultiTarget>
     private var networkReachabilityManager = NetworkReachabilityManager()
-    
+
     init(provider: NetworkProvider<MultiTarget>) {
         self.provider = provider
     }
-    
+
     func request<R: ResponseTargetType>(_ request: R) -> Single<R.ResponseType> {
         let t1 = Date()
         let target = MultiTarget(request)
@@ -25,7 +25,7 @@ public class NetworkService: NetworkServiceProviding {
             T1: t1,
             target: target
         )
-        
+
         return chenkIsNetworkReachable()
             .request(
                 provider: provider,
@@ -50,7 +50,7 @@ extension NetworkService {
         } else {
             networkReachabilityManager = NetworkReachabilityManager()
         }
-        
+
         let error = NetworkError.notReachable
         return Single.error(error)
     }
@@ -64,13 +64,13 @@ extension PrimitiveSequenceType where Self.Trait == RxSwift.SingleTrait {
         progressHandler: ((ProgressResponse?) -> Void)? = nil
     ) -> Single<Result<Response, MoyaError>> {
         Single<Result<Response, MoyaError>>.create { singleObserver in
-            
+
             let cancellableToken = provider.request(target) { progress in
                 progressHandler?(progress)
             } completion: { complete in
                 singleObserver(.success(complete))
             }
-            
+
             return Disposables.create {
                 cancellableToken.cancel()
             }
@@ -103,18 +103,18 @@ where Self.Trait == RxSwift.SingleTrait,
     ) -> Single<Response> {
         flatMap { response -> Single<Response> in
             let t4 = Date()
-            
+
             NetworkPrinter.printResponseInfo(
                 T1: t1,
                 T4: t4,
                 target: target,
                 response: response
             )
-            
+
             return Single.just(response)
         }
     }
-    
+
     func decodeToResponseType<C: Decodable>(_ type: C.Type) -> Single<C> {
         flatMap { response -> Single<C> in
             do {
@@ -133,5 +133,3 @@ where Self.Trait == RxSwift.SingleTrait,
         }
     }
 }
-
-

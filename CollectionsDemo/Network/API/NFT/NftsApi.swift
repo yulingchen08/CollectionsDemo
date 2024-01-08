@@ -9,28 +9,28 @@ import Foundation
 import Moya
 
 struct NftsApi {
-    struct getNFTsForOwner: ResponseTargetType {
+    struct GetNFTsForOwner: ResponseTargetType {
         typealias ResponseType = NftApiResponse
-        
+
         var endpoint: AlchemyEndpoint = .nft
         private let pageSize: Int
         private let pageKey: String?
-        
+
         var path: String {
             getNFTsForOwner()
         }
-        
+
         var method: Moya.Method {
             .get
         }
-        
+
         var task: Task {
             var parameters: [String: Any] = [
                 "owner": ApiConstants.owner,
                 "withMetadata": "true",
                 "pageSize": pageSize
             ]
-            
+
             if let pageKey = pageKey {
                 parameters["pageKey"] = pageKey
             }
@@ -39,7 +39,7 @@ struct NftsApi {
                 encoding: URLEncoding.queryString
             )
         }
-        
+
         init(
             pageSize: Int,
             pageKey: String?
@@ -48,8 +48,8 @@ struct NftsApi {
             self.pageKey = pageKey
         }
     }
-    
-    struct getBalance: ResponseTargetType {
+
+    struct GetBalance: ResponseTargetType {
         typealias ResponseType = GetBalanceResponse
 
         var endpoint: AlchemyEndpoint = .main
@@ -57,11 +57,11 @@ struct NftsApi {
         var path: String {
             getBalance()
         }
-        
+
         var method: Moya.Method {
             .post
         }
-        
+
         var task: Task {
             let parameters: [String: Any] = [
                 "id": 1,

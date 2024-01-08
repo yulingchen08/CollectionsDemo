@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 @testable import CollectionsDemo
 
-
 class TestCoordinator: Coordinator {
     var navigation: BaseNavigationController?
-    
+
     func start() {
         if let navigation = navigation {
             let viewController = UIViewController()

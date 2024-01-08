@@ -10,19 +10,19 @@ import XCTest
 
 final class CollectionDetailViewModelTests: XCTestCase {
     private var sut: CollectionDetailViewModel!
-    
+
     override func setUpWithError() throws {
         let gallery: Gallery = .mock
         sut = CollectionDetailViewModel(gallery: gallery)
     }
-    
+
     override func tearDownWithError() throws {
         sut = nil
     }
-    
+
     func testGetOpenseaLink() {
         let openseaLink = sut.inputs.getOpenseaLink()
-        
+
         XCTAssertNotNil(openseaLink)
         XCTAssertEqual(openseaLink?.absoluteString, "https://testnets.opensea.io/assets/goerli/name1/address1")
     }

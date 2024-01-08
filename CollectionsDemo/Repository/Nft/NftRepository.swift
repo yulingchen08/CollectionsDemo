@@ -32,7 +32,7 @@ extension NftRepository: NftRepositoryProtocol {
         pageSize: Int,
         pageKey: String?
     ) -> Single<CollectionViewModel> {
-        let request = NftsApi.getNFTsForOwner(
+        let request = NftsApi.GetNFTsForOwner(
             pageSize: pageSize,
             pageKey: pageKey
         )
@@ -42,9 +42,9 @@ extension NftRepository: NftRepositoryProtocol {
                 return Single.just(viewModel)
             }
     }
-    
+
     func getBalance() -> Single<String> {
-        let request = NftsApi.getBalance()
+        let request = NftsApi.GetBalance()
         return network.request(request)
             .flatMap { response in
                 Single.just(response.result)

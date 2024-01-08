@@ -19,7 +19,7 @@ extension EndpointPath {
     func getNFTsForOwner() -> String {
         "\(ApiConstants.apikey)/getNFTsForOwner"
     }
-    
+
     func getBalance() -> String {
         "\(ApiConstants.apikey)"
     }

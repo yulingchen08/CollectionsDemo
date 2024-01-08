@@ -50,5 +50,3 @@ struct NetworkPrinter {
         print("---------------- MoyaNetworking Response----------------")
     }
 }
-
-

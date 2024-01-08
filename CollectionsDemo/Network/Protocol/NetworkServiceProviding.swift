@@ -17,4 +17,3 @@ extension NetworkServiceProviding {
         return self.request(request)
     }
 }
-

@@ -11,14 +11,14 @@ class CollectionListCoordinator: Coordinator {
     var navigation: BaseNavigationController?
     var collectionDetailCoordinator: CollectionDetailCoordinator?
     let rootViewController: CollectionListViewController
-    
+
     init(navigation: BaseNavigationController? = nil) {
         self.navigation = navigation
         let repository: NftRepositoryProtocol = DependencyContainer.shared.getService()
         let viewModel = CollectionListViewModel(nftRepository: repository)
         self.rootViewController = CollectionListViewController(viewModel: viewModel)
     }
-    
+
     func start() {
         guard let navigation = navigation else { return }
         rootViewController.delegate = self

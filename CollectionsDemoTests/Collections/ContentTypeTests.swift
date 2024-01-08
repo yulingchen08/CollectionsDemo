@@ -9,17 +9,17 @@ import XCTest
 @testable import CollectionsDemo
 
 final class ContentTypeTests: XCTestCase {
-    
+
     func testContentTypeDecoding() throws {
         let json = """
            "image/png"
            """
-        
+
         let decodedContentType = try JSONDecoder().decode(ContentType.self, from: json.data(using: .utf8)!)
-        
+
         XCTAssertEqual(decodedContentType, .png)
     }
-    
+
     func testContentTypeEncoding() throws {
         let contentType = ContentType.svg
 
@@ -28,5 +28,4 @@ final class ContentTypeTests: XCTestCase {
 
         XCTAssertEqual(encodedString, "\"image/svg+xml\"")
     }
-    
 }

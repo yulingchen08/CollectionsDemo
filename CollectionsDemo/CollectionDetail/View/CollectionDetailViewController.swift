@@ -26,7 +26,7 @@ class CollectionDetailViewController: UIViewController {
         imageView.clipsToBounds = true
         return imageView
     }()
-    
+
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -36,7 +36,7 @@ class CollectionDetailViewController: UIViewController {
         )
         return label
     }()
-    
+
     private let descriptionLabel: UITextView = {
         let textView = UITextView()
         textView.isEditable = false
@@ -45,7 +45,7 @@ class CollectionDetailViewController: UIViewController {
         textView.textAlignment = .center
         return textView
     }()
-    
+
     private lazy var dividerView: UIView = {
         let view = UIView(frame: CGRect(
             x: 0,
@@ -56,7 +56,7 @@ class CollectionDetailViewController: UIViewController {
         view.backgroundColor = .gray
         return view
     }()
-    
+
     private lazy var openseaButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(
@@ -80,13 +80,11 @@ class CollectionDetailViewController: UIViewController {
             UIColor.gray,
             for: .normal
         )
-        
-        
         return button
     }()
-    
+
     private let viewModel: CollectionDetailViewModel
-    
+
     init(viewModel: CollectionDetailViewModel) {
         self.viewModel = viewModel
         super.init(
@@ -94,11 +92,11 @@ class CollectionDetailViewController: UIViewController {
             bundle: nil
         )
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -110,46 +108,46 @@ class CollectionDetailViewController: UIViewController {
 private extension CollectionDetailViewController {
     func setupUI() {
         view.backgroundColor = .white
-        
+
         view.addSubview(imageView)
         view.addSubview(dividerView)
         view.addSubview(nameLabel)
         view.addSubview(descriptionLabel)
         view.addSubview(openseaButton)
-        
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         openseaButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.leadingTrailingOffset),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.leadingTrailingOffset),
             imageView.heightAnchor.constraint(equalToConstant: 200),
-            
+
             dividerView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
             dividerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.leadingTrailingOffset),
             dividerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.leadingTrailingOffset),
             dividerView.heightAnchor.constraint(equalToConstant: 1),
-            
+
             nameLabel.topAnchor.constraint(equalTo: dividerView.topAnchor, constant: Constants.leadingTrailingOffset),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.labelLeadingTrailingOffset),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.labelLeadingTrailingOffset),
-            
+
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.labelLeadingTrailingOffset),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.labelLeadingTrailingOffset),
             descriptionLabel.bottomAnchor.constraint(equalTo: openseaButton.topAnchor, constant: -Constants.labelLeadingTrailingOffset),
-            
+
             openseaButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             openseaButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             openseaButton.widthAnchor.constraint(equalToConstant: 100),
             openseaButton.heightAnchor.constraint(equalToConstant: 30)
         ])
         navigationItem.title = "Collection name"
-        
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "arrow.left"),
             style: .plain,
@@ -157,18 +155,18 @@ private extension CollectionDetailViewController {
             action: #selector(backButtonTapped)
         )
     }
-    
+
     func setupAccessibilityIdentifiers() {
         imageView.accessibilityIdentifier = Accessibility.detailImageView
         nameLabel.accessibilityIdentifier = Accessibility.detailNameLabel
         descriptionLabel.accessibilityIdentifier = Accessibility.detailDescriptionLabel
         openseaButton.accessibilityIdentifier = Accessibility.detailOpenseaButton
     }
-    
+
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
+
     func updateView() {
         navigationItem.title = viewModel.gallery.contractName
         if let urlString = viewModel.gallery.imageUrl {
@@ -177,7 +175,7 @@ private extension CollectionDetailViewController {
         nameLabel.text = viewModel.gallery.name
         descriptionLabel.text = viewModel.gallery.description
     }
-    
+
     @objc func openseaButtonTapped() {
         guard let url = viewModel.inputs.getOpenseaLink() else {
             popErrorAlert()
@@ -188,7 +186,7 @@ private extension CollectionDetailViewController {
             completionHandler: nil
         )
     }
-    
+
     func popErrorAlert() {
         let alertController = UIAlertController(
             title: "Error",

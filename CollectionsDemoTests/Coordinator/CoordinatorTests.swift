@@ -20,9 +20,9 @@ final class CoordinatorTests: XCTestCase {
         let coordinator = TestCoordinator()
         let mockNavigationController = MockNavigationController()
         coordinator.navigation = mockNavigationController
-        
+
         coordinator.start()
-        
+
         XCTAssertTrue(mockNavigationController.pushViewControllerCalled)
     }
 }

@@ -12,7 +12,7 @@ import RxSwift
 class BaseRepository {
     var network: NetworkServiceProviding
     var disposeBag = DisposeBag()
-    
+
     init(network: NetworkServiceProviding) {
         self.network = network
     }

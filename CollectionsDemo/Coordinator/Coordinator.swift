@@ -14,4 +14,3 @@ protocol Coordinator: AnyObject {
 extension Coordinator {
     func start() {}
 }
-

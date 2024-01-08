@@ -10,27 +10,26 @@ import Moya
 import RxSwift
 @testable import CollectionsDemo
 
-
 class NetworkServiceStub: NetworkServiceProviding {
     private var endpointClosure: NetworkProvider<MultiTarget>.EndpointClosure?
-    
+
     func completeRequestSuccessfully(data: Data) {
         endpointClosure(
             isSuccessed: true,
             data: data
         )
     }
-    
+
     func completeRequest(with error: NSError) {
         endpointClosure(
             isSuccessed: false,
             error: error
         )
     }
-    
+
     func request<R: ResponseTargetType>(_ request: R) -> Single<R.ResponseType> {
         let target = MultiTarget(request)
-        
+
         return Single<Void>.just(())
             .request(
                 provider: NetworkProvider<MultiTarget>(
@@ -42,7 +41,7 @@ class NetworkServiceStub: NetworkServiceProviding {
             .checkHttpError()
             .decodeToResponseType(R.ResponseType.self)
     }
-    
+
     private func endpointClosure(
         isSuccessed: Bool,
         data: Data? = nil,
