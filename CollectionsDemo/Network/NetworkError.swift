@@ -12,10 +12,6 @@ enum NetworkError: Error {
     case notReachable
     case httpError(error: MoyaError)
     case responseDataIsNull
-    case insideResponseCode(
-        originResponse: Response,
-        code: Int
-    )
     case decodeError(
         error: Error,
         requestURL: URL?
@@ -27,8 +23,6 @@ enum NetworkError: Error {
             return "Network-NotReachable"
         case .httpError:
             return "Network-HttpCode"
-        case .insideResponseCode:
-            return "Network-ResponseCode"
         case .decodeError:
             return "Network-Decode"
         case .responseDataIsNull:
@@ -39,15 +33,13 @@ enum NetworkError: Error {
     public var errorMessage: String {
         switch self {
         case .notReachable:
-            return "No Internet connection. Check your connection and try again."
+            return "error_not_reachable".localized
         case .httpError:
-            return "Something went wrong. Please try again."
+            return "error_http_error".localized
         case .responseDataIsNull:
-            return "Something went wrong. Please try again."
-        case .insideResponseCode:
-            return "Something went wrong. Please try again."
+            return "error_response_data_nil".localized
         case .decodeError:
-            return "Something went wrong. Please try again."
+            return "error_decode".localized
         }
     }
 }

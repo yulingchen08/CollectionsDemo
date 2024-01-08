@@ -70,7 +70,7 @@ private extension CollectionListViewController {
 
     func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = "List"
+        navigationItem.title = "main_list".localized
     }
 
     func setupAccessibilityIdentifiers() {
@@ -80,7 +80,7 @@ private extension CollectionListViewController {
     func updateBalance(_ balance: String?) {
         guard let balance else { return }
         let balanceLabel = UILabel()
-        balanceLabel.text = "Balance: \(balance)"
+        balanceLabel.text = "\("main_balance".localized): \(balance)"
         balanceLabel.textColor = UIColor.black
         balanceLabel.font = UIFont.systemFont(ofSize: Constants.balanceFontSize)
         balanceLabel.accessibilityIdentifier = Accessibility.balanceButton

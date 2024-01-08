@@ -60,7 +60,7 @@ class CollectionDetailViewController: UIViewController {
     private lazy var openseaButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(
-            "opensea",
+            "detail_opensea".localized,
             for: .normal
         )
         button.titleLabel?.font = UIFont.systemFont(

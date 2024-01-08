@@ -1,0 +1,7 @@
+"main_list" = "List";
+"main_balance" = "Balance";
+"detail_opensea" = "Opensea";
+"error_not_reachable" = "No Internet connection. Check your connection and try again.";
+"error_http_error" = "http error, Please try again.";
+"error_response_data_nil" = "Response data is nil";
+"error_decode" = "Decoding error";
