@@ -11,15 +11,19 @@ import Moya
 
 protocol ResponseTargetType: TargetType, EndpointPath {
     associatedtype ResponseType: Codable
+    var endpoint: AlchemyEndpoint { get }
 }
 
 extension ResponseTargetType {
     var baseURL: URL {
-        URL(string: alchemy)!
+        URL(string: endpoint.baseURL)!
     }
 
     var headers: [String: String]? {
-        return nil
+        return [
+            "accept": "application/json",
+            "content-type": "application/json"
+          ]
     }
 
     var sampleData: Data {

@@ -13,6 +13,7 @@ protocol NftRepositoryProtocol: AnyObject {
         pageSize: Int,
         pageKey: String?
     ) -> Single<CollectionViewModel>
+    func getBalance() -> Single<String>
 }
 
 class NftRepository: BaseRepository {
@@ -39,6 +40,14 @@ extension NftRepository: NftRepositoryProtocol {
             .flatMap { [unowned self] response in
                 let viewModel = self.viewModelMapper.map(response: response)
                 return Single.just(viewModel)
+            }
+    }
+    
+    func getBalance() -> Single<String> {
+        let request = NftsApi.getBalance()
+        return network.request(request)
+            .flatMap { response in
+                Single.just(response.result)
             }
     }
 }

@@ -12,6 +12,7 @@ struct NftsApi {
     struct getNFTsForOwner: ResponseTargetType {
         typealias ResponseType = NftApiResponse
         
+        var endpoint: AlchemyEndpoint = .nft
         private let pageSize: Int
         private let pageKey: String?
         
@@ -45,6 +46,35 @@ struct NftsApi {
         ) {
             self.pageSize = pageSize
             self.pageKey = pageKey
+        }
+    }
+    
+    struct getBalance: ResponseTargetType {
+        typealias ResponseType = GetBalanceResponse
+
+        var endpoint: AlchemyEndpoint = .main
+
+        var path: String {
+            getBalance()
+        }
+        
+        var method: Moya.Method {
+            .post
+        }
+        
+        var task: Task {
+            let parameters: [String: Any] = [
+                "id": 1,
+                "jsonrpc": "2.0",
+                "params": [
+                    ApiConstants.owner,
+                    "latest"],
+                "method": "eth_getBalance"
+            ]
+            return .requestParameters(
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            )
         }
     }
 }

@@ -62,6 +62,7 @@
 		DBC0C6CD2B4B0717008A93A9 /* CollectionDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6CC2B4B0717008A93A9 /* CollectionDetailCoordinator.swift */; };
 		DBC0C6D22B4B07B1008A93A9 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6D12B4B07B1008A93A9 /* CollectionDetailViewController.swift */; };
 		DBC0C6D52B4B0EE3008A93A9 /* CollectionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6D42B4B0EE3008A93A9 /* CollectionDetailViewModel.swift */; };
+		DBF0E8BB2B4BCD6E003FA149 /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		DBC0C6CC2B4B0717008A93A9 /* CollectionDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailCoordinator.swift; sourceTree = "<group>"; };
 		DBC0C6D12B4B07B1008A93A9 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		DBC0C6D42B4B0EE3008A93A9 /* CollectionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewModel.swift; sourceTree = "<group>"; };
+		DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DB325BCD2B45B92200E57953 /* NftApiResponse.swift */,
+				DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				DBC0C6D52B4B0EE3008A93A9 /* CollectionDetailViewModel.swift in Sources */,
 				DB325BC22B45A56300E57953 /* BaseTargetType.swift in Sources */,
 				DB325BBB2B45618B00E57953 /* NetworkProvider.swift in Sources */,
+				DBF0E8BB2B4BCD6E003FA149 /* GetBalanceResponse.swift in Sources */,
 				DB325B7A2B450C7800E57953 /* AppDelegate.swift in Sources */,
 				DB325BC02B45A44300E57953 /* EndpointPath.swift in Sources */,
 				DB325C012B4796C500E57953 /* Coordinator.swift in Sources */,
