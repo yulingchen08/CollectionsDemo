@@ -85,7 +85,7 @@ class CollectionDetailViewController: UIViewController {
         return button
     }()
     
-    let viewModel: CollectionDetailViewModel
+    private let viewModel: CollectionDetailViewModel
     
     init(viewModel: CollectionDetailViewModel) {
         self.viewModel = viewModel

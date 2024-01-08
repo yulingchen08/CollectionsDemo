@@ -62,6 +62,8 @@
 		DBC0C6D22B4B07B1008A93A9 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6D12B4B07B1008A93A9 /* CollectionDetailViewController.swift */; };
 		DBC0C6D52B4B0EE3008A93A9 /* CollectionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0C6D42B4B0EE3008A93A9 /* CollectionDetailViewModel.swift */; };
 		DBF0E8BB2B4BCD6E003FA149 /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */; };
+		DBF0E8BD2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BC2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift */; };
+		DBF0E8BF2B4BEC2A003FA149 /* ContentTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF0E8BE2B4BEC2A003FA149 /* ContentTypeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		DBC0C6D12B4B07B1008A93A9 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		DBC0C6D42B4B0EE3008A93A9 /* CollectionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewModel.swift; sourceTree = "<group>"; };
 		DBF0E8BA2B4BCD6E003FA149 /* GetBalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
+		DBF0E8BC2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewModelTests.swift; sourceTree = "<group>"; };
+		DBF0E8BE2B4BEC2A003FA149 /* ContentTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +424,8 @@
 			children = (
 				DB325BFB2B4742CA00E57953 /* CollectionViewModelMapperTest.swift */,
 				DB325C282B49B31200E57953 /* CollectionListViewModelTests.swift */,
+				DBF0E8BC2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift */,
+				DBF0E8BE2B4BEC2A003FA149 /* ContentTypeTests.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -638,10 +644,12 @@
 				DB325BF12B472AE900E57953 /* NftRepositoryTests.swift in Sources */,
 				DB325BF62B472FBA00E57953 /* CollectionViewModelMapperMock.swift in Sources */,
 				DB325BF82B4735E700E57953 /* SharedTestHelpers.swift in Sources */,
+				DBF0E8BF2B4BEC2A003FA149 /* ContentTypeTests.swift in Sources */,
 				DBC0C6C12B49C48C008A93A9 /* CoordinatorTests.swift in Sources */,
 				DBC0C6C32B49C54A008A93A9 /* TestCoordinator.swift in Sources */,
 				DB325C272B49B29200E57953 /* NftRepositoryMock.swift in Sources */,
 				DBC0C6C52B49C5D2008A93A9 /* MockNavigationController.swift in Sources */,
+				DBF0E8BD2B4BDE88003FA149 /* CollectionDetailViewModelTests.swift in Sources */,
 				DB325C202B49A7B900E57953 /* AppCoordinatorTests.swift in Sources */,
 				DB325B912B450C7B00E57953 /* CollectionsDemoTests.swift in Sources */,
 				DB325C292B49B31200E57953 /* CollectionListViewModelTests.swift in Sources */,

@@ -32,18 +32,29 @@ final class CollectionListCoordinatorTests: XCTestCase {
         XCTAssertNotNil(sut.rootViewController.delegate)
         
         sut.rootViewController.delegate = delegateSpy
-        sut.rootViewController.delegate?.didClickImage(gallery: Gallery(
+        sut.rootViewController.delegate?.didClickCell(gallery: Gallery(
+            tokenId: "",
             contractName: "",
-            name: ""
+            address: "",
+            name: "",
+            contentType: .png
         ))
         XCTAssertTrue(delegateSpy.didClickImageCalled)
+    }
+    
+    func testDidClickCell() {
+        sut.start()
+        let testGallery: Gallery = .mock
+        
+        sut.didClickCell(gallery: testGallery)
+        
+        XCTAssertNotNil(sut.collectionDetailCoordinator)
     }
 }
 
 class DelegateSpy: CollectionListViewControllerDelegate {
     var didClickImageCalled = false
-    
-    func didClickImage(gallery: Gallery) {
+    func didClickCell(gallery: CollectionsDemo.Gallery) {
         didClickImageCalled = true
     }
 }

@@ -32,12 +32,12 @@ final class CollectionListViewModelTests: XCTestCase {
             presentCollectionCellExpectation.fulfill()
         }
         
-        sut.inputs.initializeDataFetch()
+        sut.inputs.onViewDidLoad()
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 1)
         XCTAssertEqual(sut.inputs.dataSource.totalCount, 1)
         XCTAssertEqual(sut.inputs.dataSource.pageKey, "key")
-        XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "A contract name")
+        XCTAssertEqual(sut.inputs.dataSource.galleries[0].contractName, "A contractName")
         XCTAssertEqual(sut.inputs.dataSource.galleries[0].name, "A name")
     }
     
@@ -94,7 +94,7 @@ final class CollectionListViewModelTests: XCTestCase {
             XCTFail("presentCollectionCell should not be called on error")
         }
         
-        sut.inputs.initializeDataFetch()
+        sut.inputs.onViewDidLoad()
         
         _ = XCTWaiter.wait(for: [expectation], timeout: 2.0)
         XCTAssertEqual(sut.inputs.dataSource.galleries.count, 0)

@@ -11,8 +11,12 @@ import Foundation
 final class CollectionViewModelMapperMock: CollectionViewModelMapping {
     func map(response: CollectionsDemo.NftApiResponse) -> CollectionViewModel {
         let gallery = Gallery(
+            tokenId: "tokenId",
             contractName: "contractName",
-            name: "name", description: "description"
+            address: "address",
+            name: "name",
+            description: "description",
+            contentType: .png
         )
         return CollectionViewModel(
             galleries: [gallery],

@@ -26,6 +26,10 @@ class NftRepositoryMock: NftRepositoryProtocol {
             return Single.just(viewModel)
         }
     }
+    
+    func getBalance() -> RxSwift.Single<String> {
+        Single.just("1234567")
+    }
 }
 
 extension CollectionViewModel {
@@ -33,8 +37,10 @@ extension CollectionViewModel {
         CollectionViewModel(
             galleries: [
                 Gallery(
-                    contractName: "A contract name",
-                    name: "A name"
+                    tokenId: "A tokenId",
+                    contractName: "A contractName",
+                    address: "A address",
+                    name: "A name", contentType: .svg
                 )
             ],
             pageKey: "key",
@@ -46,12 +52,17 @@ extension CollectionViewModel {
         CollectionViewModel(
             galleries: [
                 Gallery(
+                    tokenId: "tokenId1",
                     contractName: "contract1",
-                    name: "name1"
+                    address: "address1",
+                    name: "name1", contentType: .png
                 ),
                 Gallery(
+                    tokenId: "tokenId2",
                     contractName: "contract2",
-                    name: "name2"
+                    address: "address2",
+                    name: "name2",
+                    contentType: .png
                 )
             ],
             pageKey: "key",
@@ -63,12 +74,18 @@ extension CollectionViewModel {
         CollectionViewModel(
             galleries: [
                 Gallery(
+                    tokenId: "tokenId1",
                     contractName: "contract1",
-                    name: "name1"
+                    address: "address1",
+                    name: "name1",
+                    contentType: .png
                 ),
                 Gallery(
+                    tokenId: "tokenId2",
                     contractName: "contract2",
-                    name: "name2"
+                    address: "address2",
+                    name: "name2",
+                    contentType: .png
                 )
             ],
             pageKey: "key",
@@ -80,12 +97,18 @@ extension CollectionViewModel {
         CollectionViewModel(
             galleries: [
                 Gallery(
+                    tokenId: "token one",
                     contractName: "contract one",
-                    name: "name one"
+                    address: "address one",
+                    name: "name one",
+                    contentType: .png
                 ),
                 Gallery(
+                    tokenId: "token two",
                     contractName: "contract two",
-                    name: "name two"
+                    address: "address two",
+                    name: "name two",
+                    contentType: .png
                 )
             ],
             pageKey: "key",

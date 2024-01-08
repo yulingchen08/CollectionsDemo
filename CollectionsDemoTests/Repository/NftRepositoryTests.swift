@@ -35,8 +35,6 @@ final class NftRepositoryTests: XCTestCase {
             pageKey: "key"
         )
             .subscribe { viewModel in
-                print("~~viewMOdel count::: \(viewModel.galleries.count)")
-                print("~~viewMOdel gallery::: \(viewModel.galleries)")
                 viewModels.append(viewModel)
                 exp.fulfill()
             } onFailure: { error in
@@ -49,6 +47,9 @@ final class NftRepositoryTests: XCTestCase {
         XCTAssertEqual(viewModels[0].galleries.count, 1)
         XCTAssertEqual(viewModels[0].galleries[0].contractName, "contractName")
         XCTAssertEqual(viewModels[0].galleries[0].name, "name")
+        XCTAssertEqual(viewModels[0].galleries[0].tokenId, "tokenId")
+        XCTAssertEqual(viewModels[0].galleries[0].contentType, .png)
+        XCTAssertEqual(viewModels[0].galleries[0].address, "address")
         let description = try XCTUnwrap(viewModels[0].galleries[0].description)
         XCTAssertEqual(description, "description")
     }
@@ -107,7 +108,7 @@ extension NftApiResponse {
                         ),
                         isSpam: false
                     ),
-                    tokenId: nil,
+                    tokenId: "123",
                     tokenType: nil,
                     name: "Mona Lisa Smile",
                     description: "Mona Lisa Smile is a 2003 American drama film produced by Revolution Studios",
@@ -116,7 +117,7 @@ extension NftApiResponse {
                         cachedUrl: nil,
                         thumbnailUrl: nil,
                         pngUrl: nil,
-                        contentType: nil,
+                        contentType: .png,
                         size: 1728,
                         originalUrl: "https:xxx"
                     ),
