@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB325B7A2B450C7800E57953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B792B450C7800E57953 /* AppDelegate.swift */; };
 		DB325B7C2B450C7800E57953 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B7B2B450C7800E57953 /* SceneDelegate.swift */; };
-		DB325B7E2B450C7800E57953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB325B7D2B450C7800E57953 /* ViewController.swift */; };
 		DB325B812B450C7800E57953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB325B7F2B450C7800E57953 /* Main.storyboard */; };
 		DB325B832B450C7B00E57953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB325B822B450C7B00E57953 /* Assets.xcassets */; };
 		DB325B862B450C7B00E57953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB325B842B450C7B00E57953 /* LaunchScreen.storyboard */; };
@@ -86,7 +85,6 @@
 		DB325B762B450C7800E57953 /* CollectionsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB325B792B450C7800E57953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB325B7B2B450C7800E57953 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB325B7D2B450C7800E57953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB325B802B450C7800E57953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB325B822B450C7B00E57953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB325B852B450C7B00E57953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 				DB325BA92B455F6600E57953 /* Network */,
 				DB325B792B450C7800E57953 /* AppDelegate.swift */,
 				DB325B7B2B450C7800E57953 /* SceneDelegate.swift */,
-				DB325B7D2B450C7800E57953 /* ViewController.swift */,
 				DB325B7F2B450C7800E57953 /* Main.storyboard */,
 				DB325B822B450C7B00E57953 /* Assets.xcassets */,
 				DB325B842B450C7B00E57953 /* LaunchScreen.storyboard */,
@@ -604,7 +601,6 @@
 			files = (
 				DB325BB52B45613700E57953 /* NetworkService.swift in Sources */,
 				DB325C152B48587600E57953 /* CollectionListViewModel.swift in Sources */,
-				DB325B7E2B450C7800E57953 /* ViewController.swift in Sources */,
 				DB325BAD2B455FA200E57953 /* NetworkServiceProviding.swift in Sources */,
 				DB325BEB2B4712EF00E57953 /* CollectionViewModelMapper.swift in Sources */,
 				DB325BB72B45615900E57953 /* NetworkDecoder.swift in Sources */,
