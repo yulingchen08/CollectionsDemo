@@ -23,7 +23,6 @@ final class CollectionListCoordinatorTests: XCTestCase {
     }
     
     func testStart() throws {
-        var didClickImageCalled = false
         let delegateSpy = DelegateSpy()
         sut.start()
         
