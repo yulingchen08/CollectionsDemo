@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CollectionListViewControllerDelegate: AnyObject {
-    func didClickImage(gallery: Gallery)
+    func didClickCell(gallery: Gallery)
 }
 
 class CollectionListViewController: UIViewController {
@@ -54,8 +54,8 @@ class CollectionListViewController: UIViewController {
     }
 }
 
-extension CollectionListViewController {
-    private func configureCollectionView() {
+private extension CollectionListViewController {
+    func configureCollectionView() {
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -66,12 +66,12 @@ extension CollectionListViewController {
         ])
     }
     
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "List"
     }
     
-    private func bindViewModel() {
+    func bindViewModel() {
         viewModel.outputs.presentCollectionCell = { [weak self] in
             print("in presentPlaylistCell")
             DispatchQueue.main.async {
@@ -112,7 +112,9 @@ extension CollectionListViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        // TODO:
+        delegate?.didClickCell(
+            gallery: viewModel.inputs.dataSource.galleries[indexPath.row]
+        )
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

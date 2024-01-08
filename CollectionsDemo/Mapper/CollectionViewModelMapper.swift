@@ -15,7 +15,9 @@ class CollectionViewModelMapper: CollectionViewModelMapping {
     func map(response: NftApiResponse) -> CollectionViewModel {
         let galleries = response.ownedNfts.map {
             Gallery(
+                tokenId: $0.tokenId,
                 contractName: $0.contract.name,
+                address: $0.contract.address,
                 name: $0.name,
                 description: $0.description,
                 imageUrl: $0.image.originalUrl,

@@ -9,6 +9,7 @@ import UIKit
 
 class CollectionListCoordinator: Coordinator {
     var navigation: BaseNavigationController?
+    var collectionDetailCoordinator: CollectionDetailCoordinator?
     let rootViewController: CollectionListViewController
     
     init(navigation: BaseNavigationController? = nil) {
@@ -29,7 +30,15 @@ class CollectionListCoordinator: Coordinator {
 }
 
 extension CollectionListCoordinator: CollectionListViewControllerDelegate {
-    func didClickImage(gallery: Gallery) {
-        // TODO:
+    func didClickCell(gallery: Gallery) {
+        showCollectionDetailViewController(gallery: gallery)
+    }
+}
+
+private extension CollectionListCoordinator {
+    func showCollectionDetailViewController(gallery: Gallery) {
+        guard let navigation = navigation else { return }
+        collectionDetailCoordinator = CollectionDetailCoordinator(navigation: navigation)
+        collectionDetailCoordinator?.start(gallery: gallery)
     }
 }

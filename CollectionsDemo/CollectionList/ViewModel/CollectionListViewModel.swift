@@ -30,7 +30,7 @@ class CollectionListViewModel: PlaylistViewModelType,
         static let initialLoadCount = 20
         static let nextPageLoadCount = 20
     }
-
+    
     var inputs: CollectionListViewModelInputsType { return self }
     var outputs: CollectionListViewModelOutputsType { return self }
     
@@ -61,8 +61,8 @@ class CollectionListViewModel: PlaylistViewModelType,
     var presentCollectionCell: (() -> Void) = {}
 }
 
-extension CollectionListViewModel {
-    private func updateCollection(pageSize: Int) {
+private extension CollectionListViewModel {
+    func updateCollection(pageSize: Int) {
         nftRepository.getNFTsForOwner(
             pageSize: pageSize,
             pageKey: dataSource.pageKey

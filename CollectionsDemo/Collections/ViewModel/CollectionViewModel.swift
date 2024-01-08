@@ -14,7 +14,9 @@ struct CollectionViewModel {
 }
 
 struct Gallery {
+    var tokenId: String
     var contractName: String
+    var address: String
     var name: String
     var description: String?
     var imageUrl: String?

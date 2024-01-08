@@ -16,7 +16,7 @@ struct NftApiResponse: Codable {
 
 struct OwnedNft: Codable {
     let contract: Contract
-    let tokenId: String?
+    let tokenId: String
     let tokenType: String?
     let name: String
     let description: String?
