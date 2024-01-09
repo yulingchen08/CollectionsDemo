@@ -14,6 +14,9 @@ Upon initial launch, the app fetches 20 collections, and users can scroll down t
 - Displays the selected collection's contract name, image, name, and description.
 - Opensea button opens a web page with a permalink to the collection.
 
+## App Demo
+![Simulator Screen Recording - iPhone 14 Pro Max - 2024-01-09 at 13 06 26](https://github.com/yulingchen08/CollectionsDemo/assets/6461803/304d2ae6-72fb-4f40-971b-1ff57a9302f6)
+
 ## Architecture
 - The project follows the MVVM-Coordinator architecture, emphasizing testability and adherence to SOLID principles.
 
