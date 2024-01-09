@@ -49,7 +49,5 @@ Upon initial launch, the app fetches 20 collections, and users can scroll down t
 ## Note
 UI aesthetics are not a primary evaluation criterion.
 
-## Future Enhancements
-
 ## Credits
 This app is created by Yuling Chen to demonstrate the use of the Alchemy API.
