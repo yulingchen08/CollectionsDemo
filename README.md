@@ -30,6 +30,7 @@ Upon initial launch, the app fetches 20 collections, and users can scroll down t
 - Swinject
 - SwinjectAutoregistration
 - SDWebImageSVGCoder
+- SwiftLint
   
 ## Bonus Features
 ✅ Utilizes MVVM-C architecture.  
