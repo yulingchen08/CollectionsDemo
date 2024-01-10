@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 
 protocol CollectionDetailViewControllerDelegate: AnyObject {
+    func didBackActionClick()
 }
 
 class CollectionDetailViewController: UIViewController {
@@ -20,6 +21,8 @@ class CollectionDetailViewController: UIViewController {
         static let leadingTrailingOffset: CGFloat = 10.0
         static let labelLeadingTrailingOffset: CGFloat = 16.0
     }
+    weak var delegate: CollectionDetailViewControllerDelegate?
+
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -164,7 +167,7 @@ private extension CollectionDetailViewController {
     }
 
     @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
+        delegate?.didBackActionClick()
     }
 
     func updateView() {

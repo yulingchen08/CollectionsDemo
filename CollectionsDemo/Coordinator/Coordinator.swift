@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    var navigation: BaseNavigationController? { get set }
+    var navigation: BaseNavigationController { get set }
 }
 
 extension Coordinator {

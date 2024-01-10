@@ -10,7 +10,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     private weak var window: UIWindow?
     private var collectionListCoordinator: CollectionListCoordinator?
-    var navigation: BaseNavigationController?
+    var navigation: BaseNavigationController
 
     init(window: UIWindow?, navigation: BaseNavigationController) {
         self.window = window
@@ -18,7 +18,7 @@ class AppCoordinator: Coordinator {
     }
 
     func start() {
-        guard let window = window, let navigation = self.navigation else { return }
+        guard let window = window else { return }
         navigation.setNavigationBarHidden(true, animated: false)
         window.rootViewController = navigation
         collectionListCoordinator = CollectionListCoordinator(navigation: navigation)

@@ -8,11 +8,11 @@
 import UIKit
 
 class CollectionListCoordinator: Coordinator {
-    var navigation: BaseNavigationController?
-    var collectionDetailCoordinator: CollectionDetailCoordinator?
-    let rootViewController: CollectionListViewController
+    var navigation: BaseNavigationController
+    private lazy var collectionDetailCoordinator = CollectionDetailCoordinator(navigation: navigation)
+    private let rootViewController: CollectionListViewController
 
-    init(navigation: BaseNavigationController? = nil) {
+    init(navigation: BaseNavigationController) {
         self.navigation = navigation
         let repository: NftRepositoryProtocol = DependencyContainer.shared.getService()
         let viewModel = CollectionListViewModel(nftRepository: repository)
@@ -20,7 +20,6 @@ class CollectionListCoordinator: Coordinator {
     }
 
     func start() {
-        guard let navigation = navigation else { return }
         rootViewController.delegate = self
         navigation.pushViewController(
             rootViewController,
@@ -37,8 +36,6 @@ extension CollectionListCoordinator: CollectionListViewControllerDelegate {
 
 private extension CollectionListCoordinator {
     func showCollectionDetailViewController(gallery: Gallery) {
-        guard let navigation = navigation else { return }
-        collectionDetailCoordinator = CollectionDetailCoordinator(navigation: navigation)
-        collectionDetailCoordinator?.start(gallery: gallery)
+        collectionDetailCoordinator.start(gallery: gallery)
     }
 }

@@ -8,19 +8,26 @@
 import UIKit
 
 class CollectionDetailCoordinator:  Coordinator {
-    var navigation: BaseNavigationController?
+    var navigation: BaseNavigationController
     var rootViewController: CollectionDetailViewController?
-    init(navigation: BaseNavigationController? = nil) {
+    init(navigation: BaseNavigationController) {
         self.navigation = navigation
     }
 
     func start(gallery: Gallery) {
-        guard let navigation = navigation else { return }
         let viewModel = CollectionDetailViewModel(gallery: gallery)
         rootViewController = CollectionDetailViewController(viewModel: viewModel)
+        rootViewController?.delegate = self
         navigation.pushViewController(
             rootViewController!,
             animated: true
         )
+    }
+}
+
+extension CollectionDetailCoordinator: CollectionDetailViewControllerDelegate {
+    func didBackActionClick() {
+        navigation.popViewController(animated: true)
+        rootViewController = nil
     }
 }
