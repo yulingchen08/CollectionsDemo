@@ -17,9 +17,8 @@ final class CoordinatorTests: XCTestCase {
     }
 
     func testStart() {
-        let coordinator = TestCoordinator()
         let mockNavigationController = MockNavigationController()
-        coordinator.navigation = mockNavigationController
+        let coordinator = TestCoordinator(navigation: mockNavigationController)
 
         coordinator.start()
 

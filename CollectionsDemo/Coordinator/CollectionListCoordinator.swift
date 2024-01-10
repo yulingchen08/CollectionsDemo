@@ -9,8 +9,8 @@ import UIKit
 
 class CollectionListCoordinator: Coordinator {
     var navigation: BaseNavigationController
-    private lazy var collectionDetailCoordinator = CollectionDetailCoordinator(navigation: navigation)
-    private let rootViewController: CollectionListViewController
+    lazy var collectionDetailCoordinator = CollectionDetailCoordinator(navigation: navigation)
+    let rootViewController: CollectionListViewController
 
     init(navigation: BaseNavigationController) {
         self.navigation = navigation

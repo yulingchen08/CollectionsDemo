@@ -10,12 +10,17 @@ import UIKit
 @testable import CollectionsDemo
 
 class TestCoordinator: Coordinator {
-    var navigation: BaseNavigationController?
+    var navigation: BaseNavigationController
+
+    init(navigation: BaseNavigationController) {
+        self.navigation = navigation
+    }
 
     func start() {
-        if let navigation = navigation {
-            let viewController = UIViewController()
-            navigation.pushViewController(viewController, animated: true)
-        }
+        let viewController = UIViewController()
+        navigation.pushViewController(
+            viewController,
+            animated: true
+        )
     }
 }
